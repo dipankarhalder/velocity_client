@@ -85,6 +85,7 @@ $highlight-color: $btn;
 
         > em {
           font-style: normal;
+          font-weight: 700;
           color: $topcol;
         }
 
@@ -132,6 +133,7 @@ $highlight-color: $btn;
           @include flex-center(row, 6px);
 
           > em {
+            font-weight: 700;
             font-style: normal;
           }
 

@@ -100,7 +100,7 @@
         background: $btn;
         font-size: 11px;
         font-weight: 800;
-        padding: 4px 10px;
+        padding: 4px 10px 3px 10px;
         border-radius: 6px 0 0 6px;
       }
 
@@ -172,6 +172,96 @@
               border: 1px solid $btn;
             }
           }
+        }
+      }
+    }
+  }
+}
+
+.app_brands_cover {
+  display: flex;
+  width: 100%;
+  flex-direction: column;
+
+  .app_carousel_brand_heading {
+    display: flex;
+    width: 100%;
+    align-items: center;
+    justify-content: space-between;
+    margin-bottom: 16px;
+
+    .app_heading_info {
+      display: flex;
+      width: 100%;
+      font-size: 24px;
+      font-weight: 700;
+    }
+
+    .app_heading_btn_arrow {
+      display: flex;
+      gap: 4px;
+
+      > button {
+        display: flex;
+        height: 30px;
+        cursor: pointer;
+        align-items: center;
+        background: $transparent;
+        border: 0px solid $transparent;
+
+        > span {
+          width: 26px;
+          height: 20px;
+
+          > svg {
+            width: 26px;
+            height: 20px;
+          }
+        }
+      }
+    }
+  }
+
+  .app_list_of_brand_item {
+    display: flex;
+    width: 100%;
+    position: relative;
+
+    .swiper-wrapper {
+      padding-bottom: 10px;
+    }
+
+    .swiper-button-prev,
+    .swiper-button-next {
+      top: 0px;
+    }
+
+    .app_item_brand_card {
+      box-sizing: border-box;
+      width: 100%;
+      background: #f4f4f4;
+      box-shadow: 0px 2px 4px rgba(0, 0, 0, 0.06);
+      border-radius: 6px;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      padding: 10px 14px 8px;
+      position: relative;
+
+      > figure {
+        height: 80px;
+        display: flex;
+        width: 100%;
+        display: flex;
+        position: relative;
+        justify-content: center;
+        mix-blend-mode: darken;
+
+        > img {
+          left: 50% !important;
+          transform: translateX(-50%);
+          width: 100px !important;
+          height: 80px !important;
         }
       }
     }

@@ -7,6 +7,7 @@ import { PopularCategory } from "@/components/elements/home/popularCategory";
 import { AdvtThird } from "@/components/elements/home/advtthird";
 import { Advtforth } from "@/components/elements/home/advtforth";
 import { BestMonitor } from "@/components/elements/home/bestMonitor";
+import { Brands } from "@/components/elements/home/brands";
 import keyAdvt from "@/public/keyboardAdd.jpg";
 import keyAdvtnew from "@/public/advmacitem.jpg";
 
@@ -23,6 +24,7 @@ export default function Home() {
       <AdvtThird />
       <FullAdvt imagepath={keyAdvtnew} imagealt={"Macbook user"} />
       <BestMonitor />
+      <Brands />
     </>
   );
 }
