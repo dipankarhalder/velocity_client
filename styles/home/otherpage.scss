@@ -1,0 +1,56 @@
+.app_inside_banner {
+  display: flex;
+  width: 100%;
+  position: relative;
+  height: 220px;
+  margin-bottom: 10px;
+
+  img {
+    width: 100%;
+    border-radius: 8px;
+    height: auto !important;
+  }
+}
+
+.app_bradecumb {
+  display: flex;
+  width: 100%;
+
+  > ul {
+    width: 100%;
+    display: flex;
+    align-items: center;
+    gap: 8px;
+
+    > li {
+      display: flex;
+      gap: 8px;
+      text-transform: capitalize;
+      font-size: 14px;
+      font-weight: 700;
+
+      > span {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        width: 18px;
+        height: 18px;
+
+        > svg.app_brd_home {
+          width: 18px;
+          height: 18px;
+        }
+
+        > svg.app_brd_arrow {
+          width: 14px;
+          height: 14px;
+        }
+      }
+    }
+  }
+}
+
+.app_processor_brand_items {
+  display: flex;
+  width: 100%;
+}

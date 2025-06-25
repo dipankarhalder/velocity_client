@@ -16,7 +16,9 @@ export const MainHeader = () => {
           </div>
           <nav className="app_main_header_right" aria-label="User navigation">
             <div className="app_build_pc_btn">
-              <button aria-label="Build your custom PC">Build Your PC</button>
+              <Link href="/build-pc" aria-label="Build your custom PC">
+                Build Your PC
+              </Link>
             </div>
             <div className="app_main_header_spcl_btns">
               <ul>

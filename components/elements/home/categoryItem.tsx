@@ -13,28 +13,68 @@ import {
 } from "@/components/icons";
 
 const categories = [
-  { icon: Processor, label: "Processor", discount: "up to 30% off" },
-  { icon: Motherboard, label: "Motherboard", discount: "up to 32% off" },
-  { icon: Memory, label: "Memory", discount: "up to 23% off" },
-  { icon: Monitor, label: "Monitor", discount: "up to 45% off" },
-  { icon: Storage, label: "Storage", discount: "up to 31% off" },
-  { icon: Keyboard, label: "Keyboard", discount: "up to 16% off" },
-  { icon: Cabinate, label: "Cabinate", discount: "up to 22% off" },
-  { icon: Headphone, label: "Headphone", discount: "up to 28% off" },
-  { icon: Consoles, label: "Console", discount: "up to 38% off" },
+  {
+    icon: Processor,
+    path: "/processor",
+    label: "Processor",
+    discount: "upto 30% off",
+  },
+  {
+    icon: Motherboard,
+    path: "/motherboard",
+    label: "Motherboard",
+    discount: "upto 32% off",
+  },
+  { icon: Memory, path: "/memory", label: "Memory", discount: "upto 23% off" },
+  {
+    icon: Monitor,
+    path: "/monitor",
+    label: "Monitor",
+    discount: "upto 45% off",
+  },
+  {
+    icon: Storage,
+    path: "/storage",
+    label: "Storage",
+    discount: "upto 31% off",
+  },
+  {
+    icon: Keyboard,
+    path: "/keyboard",
+    label: "Keyboard",
+    discount: "upto 16% off",
+  },
+  {
+    icon: Cabinate,
+    path: "/cabinate",
+    label: "Cabinate",
+    discount: "upto 22% off",
+  },
+  {
+    icon: Headphone,
+    path: "/headphone",
+    label: "Headphone",
+    discount: "upto 28% off",
+  },
+  {
+    icon: Consoles,
+    path: "/console",
+    label: "Console",
+    discount: "upto 38% off",
+  },
 ];
 
 export const CategoryItem = () => {
   return (
     <div className="app_categories_items">
       <ul>
-        {categories.map(({ icon: Icon, label }) => (
+        {categories.map(({ icon: Icon, path, label, discount }) => (
           <li key={label} role="listitem" aria-label={label}>
-            <Link href="/">
+            <Link href={path}>
               <Icon aria-hidden="true" focusable="false" />
               <div className="app_category_text">
                 <h6>{label}</h6>
-                <p>up to 30% off</p>
+                <p>{discount}</p>
               </div>
             </Link>
           </li>

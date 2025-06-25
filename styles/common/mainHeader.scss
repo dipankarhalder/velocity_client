@@ -105,7 +105,8 @@ $transparent: transparent;
       gap: 36px;
 
       .app_build_pc_btn {
-        button {
+        button,
+        a {
           height: $btn-height;
           padding: $btn-padding;
           font-size: $font-size-medium;
@@ -114,6 +115,8 @@ $transparent: transparent;
           background: $btn;
           border: none;
           border-radius: 8px;
+          display: flex;
+          align-items: center;
         }
       }
 

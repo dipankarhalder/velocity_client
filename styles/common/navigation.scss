@@ -38,21 +38,106 @@
       grid-template-columns: auto 1fr;
       gap: 110px;
 
-      .app_nav_category {
-        @extend .grid_center;
-        grid-auto-flow: column;
-        background: $transparent;
-        gap: 10px;
-        border: 0;
+      .app_categry_navigation {
+        position: relative;
 
-        > span {
-          @include icon-size(24px);
+        .app_nav_category {
+          @extend .grid_center;
+          grid-auto-flow: column;
+          background: $transparent;
+          cursor: pointer;
+          gap: 10px;
+          border: 0;
+
+          > span {
+            @include icon-size(24px);
+          }
+
+          p {
+            color: $black;
+            font-size: 16px;
+            font-weight: 800;
+          }
         }
 
-        p {
-          color: $black;
-          font-size: 16px;
-          font-weight: 800;
+        .app_nav_child_section {
+          position: absolute;
+          width: 220px;
+          padding-top: 18px;
+          display: none;
+
+          > ul {
+            display: flex;
+            width: 100%;
+            flex-direction: column;
+            background: $white;
+            box-shadow: 1px 2px 5px rgba(0, 0, 0, 0.12);
+
+            > li {
+              width: 100%;
+              transition: 0.5s;
+              border-bottom: 1px solid $btnLight;
+
+              > a {
+                display: flex;
+                padding: 14px 20px;
+                align-items: center;
+                gap: 8px;
+
+                > span {
+                  width: 24px;
+                  height: 24px;
+
+                  > svg {
+                    width: 24px;
+                    height: 24px;
+
+                    > path {
+                      transition: 0.5s;
+                    }
+                  }
+                }
+
+                > p {
+                  font-size: 15px;
+                  font-weight: 700;
+                  color: $black;
+                  transition: 0.5s;
+                }
+              }
+
+              &:hover {
+                background: $hoverbg;
+                transition: 0.5s;
+
+                > a {
+                  > span {
+                    svg path {
+                      stroke: darken($btn, 6%);
+                      transition: 0.5s;
+                    }
+
+                    &.svg_item_color svg path {
+                      fill: darken($btn, 6%);
+                      stroke-width: 0;
+                      transition: 0.5s;
+                    }
+                  }
+
+                  > p {
+                    color: darken($btn, 6%);
+                    transition: 0.5s;
+                  }
+                }
+              }
+            }
+          }
+        }
+
+        &:hover {
+          .app_nav_child_section {
+            display: inline-block;
+          }
         }
       }
 
