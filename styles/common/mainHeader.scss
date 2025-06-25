@@ -41,17 +41,10 @@ $transparent: transparent;
   grid-template-columns: 1fr;
   width: 100%;
   padding: $header-padding;
-  position: relative;
-
-  > span {
-    position: absolute;
-    top: 100%;
-    left: 0;
-    width: 100%;
-    height: 36px;
-    z-index: -1;
-    background: $gradient-white;
-  }
+  position: sticky;
+  top: 0px;
+  z-index: 6;
+  background: $white;
 
   .app_inside_main_header {
     display: grid;

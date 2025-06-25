@@ -49,7 +49,7 @@ export const MainHeader = () => {
           </nav>
         </div>
       </div>
-      <span className="app_shadow_node" aria-hidden="true"></span>
+      {/* <span className="app_shadow_node" aria-hidden="true"></span> */}
     </header>
   );
 };

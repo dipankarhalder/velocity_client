@@ -24,6 +24,7 @@ export default function MainLayout({ children }: Readonly<IChildren>) {
       >
         <div className="app_container">{children}</div>
       </main>
+      <footer></footer>
     </section>
   );
 }
