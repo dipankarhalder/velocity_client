@@ -150,3 +150,50 @@
     width: 80%;
   }
 }
+
+.app_category_build_item {
+  display: flex;
+  width: 100%;
+  margin-top: 30px;
+
+  > ul {
+    display: flex;
+    width: 100%;
+    gap: 15.3px;
+
+    > li {
+      width: 12%;
+      display: flex;
+      padding: 14px 20px;
+      border-radius: 10px;
+      flex-direction: column;
+      align-items: center;
+      background: $bgnewcatg;
+      border: 1px solid lighten($bgcategory, 16%);
+
+      > span {
+        position: relative;
+        display: flex;
+        width: 100%;
+        justify-content: center;
+        margin-bottom: 8px;
+
+        > img {
+          width: 80px !important;
+          mix-blend-mode: darken;
+        }
+      }
+
+      > h6 {
+        font-size: 15px;
+        font-weight: 700;
+        line-height: 1.2;
+      }
+
+      &::after {
+        content: "";
+        position: absolute;
+      }
+    }
+  }
+}
