@@ -1,12 +1,13 @@
 import Image from "next/image";
 import { Home, Larrow } from "@/components/icons";
 import { Checkbox } from "./checkbox";
-import insideBanner from "../../../public/banner.avif";
+import insideBanner from "../../../public/banner1.jpg";
 import mb1 from "../../../public/mb1.jpg";
 import mb2 from "../../../public/mb2.png";
 import mb3 from "../../../public/mb3.jpeg";
 import mb4 from "../../../public/mb4.jpg";
 import mb5 from "../../../public/mb5.jpg";
+import Link from "next/link";
 
 interface PageProps {
   params: {
@@ -18,7 +19,7 @@ const motherboard = [
   { path: mb1, title: "ASRock", discount: "upto 20% off" },
   { path: mb2, title: "Gigabyte", discount: "upto 16% off" },
   { path: mb3, title: "MSI", discount: "upto 24% off" },
-  { path: mb4, title: "Asus", discount: "upto 30% off" },
+  { path: mb4, title: "ASUS", discount: "upto 30% off" },
   { path: mb5, title: "Nzxt", discount: "upto 10% off" },
 ];
 
@@ -108,6 +109,25 @@ const filterOptions = [
   },
 ];
 
+const chipset = [
+  { id: 16, title: "A320" },
+  { id: 1, title: "A520" },
+  { id: 2, title: "A620" },
+  { id: 3, title: "B450" },
+  { id: 4, title: "B550" },
+  { id: 5, title: "B650" },
+  { id: 15, title: "B660" },
+  { id: 6, title: "B760" },
+  { id: 7, title: "B860" },
+  { id: 8, title: "G41" },
+  { id: 9, title: "H310" },
+  { id: 10, title: "H510" },
+  { id: 11, title: "H610" },
+  { id: 12, title: "H14PA" },
+  { id: 13, title: "Q270" },
+  { id: 14, title: "X870" },
+];
+
 export default async function CategoryPage({ params }: PageProps) {
   const { slug } = await params;
 
@@ -131,27 +151,7 @@ export default async function CategoryPage({ params }: PageProps) {
           <li>{slug}</li>
         </ul>
       </div>
-      <div className="app_main_product_category">
-        <ul>
-          {motherboard.map((item) => (
-            <li key={item.title}>
-              <span>
-                <Image
-                  src={item.path}
-                  alt="inside banner"
-                  fill
-                  sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 33vw"
-                  style={{ objectFit: "contain" }}
-                />
-              </span>
-              <div className="app_text_head_dis">
-                <h4>{item.title}</h4>
-                <p>{item.discount}</p>
-              </div>
-            </li>
-          ))}
-        </ul>
-      </div>
+
       <div className="app_main_page_content">
         <div className="app_sidebar_filter">
           <h5>Filter Products</h5>
@@ -170,6 +170,41 @@ export default async function CategoryPage({ params }: PageProps) {
         </div>
         <div className="app_main_list_content_area">
           <h4>{slug}</h4>
+          <div className="app_main_product_category">
+            <h6>Shop by Brands</h6>
+            <ul>
+              {motherboard.map((item) => (
+                <li key={item.title}>
+                  <span>
+                    <Image
+                      src={item.path}
+                      alt="inside banner"
+                      fill
+                      sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 33vw"
+                      style={{ objectFit: "contain" }}
+                    />
+                  </span>
+                  <div className="app_text_head_dis">
+                    <h4>{item.title}</h4>
+                    <p>{item.discount}</p>
+                  </div>
+                </li>
+              ))}
+            </ul>
+          </div>
+          <div className="app_chipset_list_items">
+            <h6>Shop by Chipsets</h6>
+            <ul>
+              {chipset.map((item) => (
+                <li key={item.id}>
+                  <Link href="/">
+                    <p>{item.title}</p>
+                    <Larrow />
+                  </Link>
+                </li>
+              ))}
+            </ul>
+          </div>
         </div>
       </div>
     </>

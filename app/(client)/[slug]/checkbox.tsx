@@ -11,8 +11,10 @@ export const Checkbox = ({ title }: Props) => {
 
   return (
     <li>
-      <input type="checkbox" onChange={() => handleChange(title)} />
-      <label>{title}</label>
+      <label>
+        <input type="checkbox" onChange={() => handleChange(title)} />
+        <p>{title}</p>
+      </label>
     </li>
   );
 };
