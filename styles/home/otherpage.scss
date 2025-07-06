@@ -258,6 +258,21 @@
   }
 }
 
+.app_build_main_content_list {
+  width: 100%;
+  display: flex;
+  justify-content: space-between;
+  margin-bottom: 100px;
+
+  .app_build_mian_area {
+    width: 75%;
+  }
+  .app_price_calculation {
+    width: 23%;
+    background: #cccccc;
+  }
+}
+
 .app_category_build_item {
   display: flex;
   width: 100%;
@@ -274,53 +289,280 @@
   > ul {
     display: flex;
     width: 100%;
-    gap: 14px;
+    gap: 10px;
 
     > li {
-      width: 10%;
+      width: 16%;
       display: flex;
-      padding: 16px 20px;
-      border-radius: 10px;
-      flex-direction: column;
       align-items: center;
+      position: relative;
+      border-radius: 10px;
+      padding: 10px 14px;
       background: $bgnewcatg;
       border: 1px solid lighten($bgcategory, 16%);
-      position: relative;
 
-      > span {
-        position: relative;
-        display: flex;
-        width: 50px;
-        height: 50px;
-        justify-content: center;
-        margin-bottom: 10px;
-
-        > svg {
-          width: 50px;
-          height: 50px;
-        }
-
-        > img {
-          width: 80px !important;
-          mix-blend-mode: darken;
+      &:hover {
+        &:after {
+          position: absolute;
+          content: "";
+          width: 0px;
+          height: 0px;
+          top: 100%;
+          left: 50%;
+          transform: translateX(-50%);
+          border-top: 7px solid lighten($bgcategory, 16%);
+          border-left: 7px solid transparent;
+          border-right: 7px solid transparent;
         }
       }
 
-      > h6 {
-        font-size: 14px;
-        font-weight: 700;
-        line-height: 1.2;
+      .app_left_side_build {
+        gap: 10px;
+        display: flex;
+        width: 100%;
+        align-items: center;
+
+        > span {
+          position: relative;
+          display: flex;
+          width: 26px;
+          height: 26px;
+          justify-content: center;
+
+          > svg {
+            width: 26px;
+            height: 26px;
+          }
+
+          > img {
+            width: 80px !important;
+            mix-blend-mode: darken;
+          }
+        }
+
+        > h6 {
+          font-size: 13px;
+          font-weight: 700;
+          line-height: 1.2;
+        }
       }
 
       .app_status_update {
         position: absolute;
-        top: 5px;
-        right: 5px;
+        top: -8px;
+        right: -8px;
+        width: 22px;
+        height: 22px;
+
+        &:after {
+          position: absolute;
+          content: "";
+          width: 10px;
+          height: 10px;
+          top: 6px;
+          left: 6px;
+          background: lighten($green, 62%);
+          z-index: 1;
+        }
+
+        > span {
+          width: 22px;
+          height: 22px;
+          position: relative;
+          z-index: 2;
+
+          > svg {
+            width: 22px;
+            height: 22px;
+            > path {
+              fill: $green;
+            }
+          }
+        }
       }
 
-      &::after {
-        content: "";
-        position: absolute;
+      &.active_item_list {
+        background: lighten($green, 62%);
+        border: 1px solid $green;
+
+        &::after {
+          position: absolute;
+          content: "";
+          width: 0px;
+          height: 0px;
+          top: 100%;
+          left: 50%;
+          transform: translateX(-50%);
+          border-top: 7px solid $green;
+          border-left: 7px solid transparent;
+          border-right: 7px solid transparent;
+        }
+
+        .app_left_side_build {
+          h6 {
+            color: $green;
+          }
+
+          > span > svg > path {
+            stroke: darken($green, 10%);
+          }
+        }
+      }
+    }
+  }
+
+  .app_build_product_view_sec {
+    display: flex;
+    width: 100%;
+    margin-top: 16px;
+
+    > ul {
+      display: flex;
+      width: 100%;
+      flex-wrap: wrap;
+      gap: 12px;
+      border-radius: 12px;
+      background: lighten($topbg, 3%);
+      padding: 12px 12px;
+
+      > li {
+        width: calc(15.88% - 2px);
+
+        .app_item_product_card {
+          box-sizing: border-box;
+          width: 100%;
+          background: $white;
+          border: 1px solid $lborder;
+          box-shadow: 0px 2px 4px rgba(0, 0, 0, 0.06);
+          border-radius: 6px;
+          display: flex;
+          flex-direction: column;
+          align-items: center;
+          padding: 2px 12px 16px;
+          position: relative;
+
+          > figure {
+            height: 80px;
+            display: flex;
+            width: 100%;
+            display: flex;
+            position: relative;
+            align-items: center;
+            margin-bottom: 6px;
+
+            > img {
+              width: 80px;
+              height: 80px;
+            }
+          }
+
+          > h3 {
+            font-size: 12px;
+            font-weight: 700;
+            text-align: center;
+            margin-bottom: 10px;
+          }
+
+          .app_discount_price {
+            position: absolute;
+            top: 10px;
+            right: 0px;
+            color: $white;
+            background: $btn;
+            font-size: 11px;
+            font-weight: 800;
+            padding: 4px 10px 3px 10px;
+            border-radius: 6px 0 0 6px;
+          }
+
+          .app_price_and_btn {
+            display: flex;
+            width: 100%;
+            flex-direction: column;
+            align-items: center;
+            justify-content: space-between;
+
+            .app_product_price_sec {
+              display: flex;
+              flex-direction: column;
+              margin-bottom: 6px;
+
+              > p {
+                font-size: 15px;
+                font-weight: 700;
+                color: $btn;
+              }
+            }
+
+            .app_btn_add {
+              display: flex;
+
+              > button {
+                color: $btn;
+                font-size: 13px;
+                font-weight: 700;
+                padding: 4px 20px;
+                background: $btnLight;
+                height: 28px;
+                cursor: pointer;
+                border-radius: 5px;
+                border: 1px solid $btn;
+              }
+
+              .app_btn_quantity {
+                display: flex;
+                gap: 4px;
+                background: $btn;
+                border-radius: 5px;
+                align-items: center;
+
+                > span {
+                  width: 20px;
+                  height: 20px;
+                  text-align: center;
+                  font-size: 13px;
+                  font-weight: 800;
+                  color: $white;
+                }
+
+                button {
+                  color: $btn;
+                  font-size: 20px;
+                  font-weight: 700;
+                  background: $btnLight;
+                  width: 28px;
+                  height: 28px;
+                  cursor: pointer;
+                  border-radius: 5px;
+                  line-height: 16px;
+                  border: 1px solid $btn;
+                }
+              }
+            }
+          }
+        }
+
+        &.active_item .app_item_product_card {
+          border: 1px solid $btn;
+
+          &:after {
+            content: "";
+            position: absolute;
+            right: 4px;
+            top: 4px;
+            width: 10px;
+            height: 10px;
+            border-radius: 50%;
+            background: $btn;
+          }
+
+          .app_btn_add {
+            > button {
+              color: $white;
+              background: $btn;
+            }
+          }
+        }
       }
     }
   }
