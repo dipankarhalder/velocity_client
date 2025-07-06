@@ -9,11 +9,9 @@ import mb4 from "../../../public/mb4.jpg";
 import mb5 from "../../../public/mb5.jpg";
 import Link from "next/link";
 
-interface PageProps {
-  params: {
-    slug: string;
-  };
-}
+type PageProps = {
+  params: Promise<{ slug: string }>;
+};
 
 const motherboard = [
   { path: mb1, title: "ASRock", discount: "upto 20% off" },
