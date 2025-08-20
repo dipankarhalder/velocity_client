@@ -5,7 +5,7 @@ import { ProductCard } from "@/components/elements/shared/productCard";
 interface Product {
   id: number;
   name: string;
-  image: any;
+  image: string;
   price: number;
   discount: number;
 }
