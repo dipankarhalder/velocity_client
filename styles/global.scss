@@ -1,9 +1,12 @@
 @import "./core/color.scss";
 @import "./core/base.scss";
+@import "./core/mixin.scss";
+@import "./core/functions.scss";
 
 @import "./common/topHeader.scss";
 @import "./common/mainHeader.scss";
 @import "./common/navigation.scss";
+@import "./common/card.scss";
 
 @import "./home/mainbanner.scss";
 @import "./home/categoryItem.scss";

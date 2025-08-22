@@ -32,13 +32,15 @@ export const ProductCard: React.FC<ProductCardProps> = ({
           style={{ objectFit: "contain" }}
         />
       </figure>
-      <h3>{truncateText(name, 40)}</h3>
-      {discount !== 0 && (
-        <span className="app_discount_price">{discount}% OFF</span>
-      )}
-      <div className="app_price_and_btn">
-        <Price price={price} discount={discount} />
-        <AddToCartButton productName={name} />
+      <div className="product_card_details">
+        <h3>{truncateText(name, 40)}</h3>
+        {discount !== 0 && (
+          <span className="app_discount_price">{discount}% OFF</span>
+        )}
+        <div className="app_price_and_btn">
+          <Price price={price} discount={discount} />
+          <AddToCartButton productName={name} />
+        </div>
       </div>
     </article>
   );
