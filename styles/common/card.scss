@@ -1,3 +1,5 @@
+$items-per-row: 5;
+
 .app_main_product_list_container {
   margin: rem(30) 0;
 }
@@ -7,13 +9,18 @@
   margin: rem(25) 0;
 
   .app_item_product_card {
-    flex-basis: calc(25% - 35px);
+    flex-basis: calc(20% - 20px);
     flex-shrink: 0;
     flex-grow: 0;
-    margin: 0 rem(35) rem(35) 0;
+    margin: 0 rem(20) rem(20) 0;
     overflow: hidden;
     transition: box-shadow 0.3s;
     z-index: 1;
+    width: calc(100% / #{$items-per-row} - 20px);
+
+    &:nth-child(#{$items-per-row}n) {
+      margin-right: 0;
+    }
 
     &::after {
       content: "";
@@ -76,7 +83,7 @@
       display: flex;
       position: relative;
       align-items: center;
-      margin: rem(2);
+      border: 2px solid transparent;
     }
   }
 }
