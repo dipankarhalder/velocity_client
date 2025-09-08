@@ -444,7 +444,7 @@ export default function BuildPC() {
                               })}
                             </p>
                           </div>
-                          <AddToCartButton productName={item.name} />
+                          <AddToCartButton productName={item.name} itemSelected={item.selected ? 1 : 0} />
                         </div>
                       </article>
                     </li>
@@ -511,7 +511,7 @@ export default function BuildPC() {
                               })}
                             </p>
                           </div>
-                          <AddToCartButton productName={item.name} />
+                          <AddToCartButton productName={item.name} itemSelected={item.selected ? 1 : 0} />
                         </div>
                       </article>
                     </li>

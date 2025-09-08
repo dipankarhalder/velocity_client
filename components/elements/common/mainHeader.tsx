@@ -21,9 +21,12 @@ export const MainHeader = () => {
               </Link>
             </div>
             <div className="app_main_header_spcl_btns">
-              <ul>
+              <ul role="list">
                 <li className="app_login_btn">
-                  <button aria-label="Login to your account">
+                  <button
+                    aria-label="Login to your account"
+                    type="button"
+                  >
                     <Account aria-hidden="true" focusable="false" />
                     <div className="app_main_header_login_text">
                       <p>Login</p>
