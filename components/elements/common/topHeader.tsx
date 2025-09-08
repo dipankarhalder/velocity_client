@@ -1,6 +1,13 @@
 import Link from "next/link";
 import { Location, Call, File, Map, Affiliate } from "@/components/icons";
 
+const navItems = [
+  { href: '/', icon: <File aria-hidden="true" focusable="false" />, label: 'Blogs' },
+  { href: '/', icon: <Call aria-hidden="true" focusable="false" />, label: 'Contact Us' },
+  { href: '/', icon: <Map aria-hidden="true" focusable="false" />, label: 'Store Locator' },
+  // { href: '/', icon: <Affiliate aria-hidden="true" focusable="false" />, label: 'Affiliate' },
+];
+
 export const TopHeader = () => {
   return (
     <div
@@ -12,9 +19,9 @@ export const TopHeader = () => {
         <div className="app_inside_content topheader_divide">
           <address
             className="app_top_header_left"
-            aria-label="Company contact information"
+            aria-label="Velocity contact information"
           >
-            <ul>
+            <ul role="list">
               <li>
                 <Location aria-hidden="true" focusable="false" />
                 <p>124/A, R. S. Mallick Road, Jadavpur, Kolkata - 700084</p>
@@ -31,35 +38,16 @@ export const TopHeader = () => {
               </li>
             </ul>
           </address>
-          <nav
-            className="app_top_header_right"
-            aria-label="Top header navigation"
-          >
-            <ul>
-              <li>
-                <Link href="/">
-                  <File aria-hidden="true" focusable="false" />
-                  <em>Blogs</em>
-                </Link>
-              </li>
-              <li>
-                <Link href="/">
-                  <Call aria-hidden="true" focusable="false" />
-                  <em>Contact Us</em>
-                </Link>
-              </li>
-              <li>
-                <Link href="/">
-                  <Map aria-hidden="true" focusable="false" />
-                  <em>Store Locator</em>
-                </Link>
-              </li>
-              <li>
-                <Link href="/">
-                  <Affiliate aria-hidden="true" focusable="false" />
-                  <em>Affiliate</em>
-                </Link>
-              </li>
+          <nav className="app_top_header_right" aria-label="Top header navigation">
+            <ul role="list">
+              {navItems.map(({ href, icon, label }, index) => (
+                <li key={index}>
+                  <Link href={href} aria-label={label}>
+                    {icon}
+                    <em>{label}</em>
+                  </Link>
+                </li>
+              ))}
             </ul>
           </nav>
         </div>
