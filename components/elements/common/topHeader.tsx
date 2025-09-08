@@ -1,5 +1,5 @@
 import Link from "next/link";
-import { Location, Call, File, Map, Affiliate } from "@/components/icons";
+import { Location, Call, File, Map } from "@/components/icons"; //Affiliate
 
 const navItems = [
   { href: '/', icon: <File aria-hidden="true" focusable="false" />, label: 'Blogs' },
