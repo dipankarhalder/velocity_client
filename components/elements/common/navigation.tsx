@@ -37,22 +37,25 @@ const categories = [
 
 export const Navigation = () => {
   return (
-    <div className="app_nav_wrapper">
+    <nav className="app_nav_wrapper" aria-label="Main navigation">
       <div className="app_nav_items">
         <div className="app_categry_navigation">
           <button
             className="app_nav_category"
             type="button"
             aria-label="Browse categories"
+            aria-haspopup="true"
+            aria-expanded="false"
+            tabIndex={0}
           >
             <Menu aria-hidden="true" focusable="false" />
             <p>Find Categories</p>
           </button>
-          <div className="app_nav_child_section">
+          <div className="app_nav_child_section" role="menu" aria-label="Categories">
             <ul>
               {categories.map(({ icon: Icon, label }) => (
-                <li key={label} role="listitem" aria-label={label}>
-                  <Link href="/">
+                <li key={label}>
+                  <Link href="/" aria-label={label}>
                     <Icon aria-hidden="true" focusable="false" />
                     <p>{label}</p>
                   </Link>
@@ -71,6 +74,7 @@ export const Navigation = () => {
                   "aria-haspopup": "true",
                   "aria-expanded": "false",
                 })}
+                tabIndex={0}
               >
                 <span>{label}</span>
                 {hasSubmenu && <Darrow aria-hidden="true" focusable="false" />}
@@ -85,6 +89,6 @@ export const Navigation = () => {
           <p>Special Offers</p>
         </Link>
       </div>
-    </div>
+    </nav>
   );
 };

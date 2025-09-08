@@ -4,12 +4,14 @@ import { useState } from "react";
 
 interface AddToCartButtonProps {
   productName: string;
+  itemSelected?: number;
 }
 
 export const AddToCartButton: React.FC<AddToCartButtonProps> = ({
   productName,
+  itemSelected,
 }) => {
-  const [quantity, setQuantity] = useState(0);
+  const [quantity, setQuantity] = useState(itemSelected || 0);
 
   const handleAdd = () => {
     setQuantity(1);

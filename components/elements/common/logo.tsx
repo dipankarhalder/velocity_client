@@ -1,7 +1,8 @@
 export const Logo = () => {
   return (
     <div className="app_logo">
-      <svg width="170" height="33" viewBox="0 0 170 33" fill="none">
+      <svg width="170" height="33" viewBox="0 0 170 33" fill="none" role="img" aria-label="Velocity Private Limited">
+        <title>Velocity Private Limited</title>
         <path
           d="M11.9929 27.0373L16.0425 17.0275L15.3271 19.1168H15.1989L21.2557 4.11456H29.4091L19.1591 27.0373H11.9929Z"
           fill="black"
