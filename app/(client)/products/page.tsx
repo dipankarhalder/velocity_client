@@ -1,5 +1,6 @@
 import React from "react";
 import { ProductCard } from "@/components/elements/shared/productCard";
+import Link from "next/link";
 
 // Product Details
 interface Product {
@@ -114,7 +115,9 @@ export default function Products() {
       </h2>
       <div className="app_product_list_wrapper">
         {products.map((item) => (
+          // <Link href={`/product/${item.id}`} key={item.id}>
           <ProductCard key={item.id} {...item} />
+          // </Link>
         ))}
       </div>
     </div>
