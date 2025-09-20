@@ -13,6 +13,7 @@ import "swiper/css/scrollbar";
 
 interface Product {
   id: number;
+  slug: string;
   name: string;
   image: string;
   price: number;
@@ -22,6 +23,7 @@ interface Product {
 const products: Product[] = [
   {
     id: 1,
+    slug: "monitor",
     name: "Asus ProArt Display PA247CV Prof Monitor",
     image: "/m1.jpg",
     price: 41650,
@@ -29,6 +31,7 @@ const products: Product[] = [
   },
   {
     id: 2,
+    slug: "monitor",
     name: "Asus VZ24EHE 24 Inch Professional Monitor",
     image: "/m2.jpg",
     price: 14900,
@@ -36,6 +39,7 @@ const products: Product[] = [
   },
   {
     id: 3,
+    slug: "monitor",
     name: "AOC 27G4E 27 Inch Gaming Monitor",
     image: "/m3.jpg",
     price: 81250,
@@ -43,6 +47,7 @@ const products: Product[] = [
   },
   {
     id: 4,
+    slug: "monitor",
     name: "AOC 22B30HM2 22 Inch Prof Monitor",
     image: "/m4.jpg",
     price: 141650,
@@ -50,6 +55,7 @@ const products: Product[] = [
   },
   {
     id: 5,
+    slug: "monitor",
     name: "AOC 24B30HM2 24 Inch Prof Monitor",
     image: "/m5.jpg",
     price: 49990,
@@ -57,6 +63,7 @@ const products: Product[] = [
   },
   {
     id: 6,
+    slug: "monitor",
     name: "Asus Rog Strix XG27ACS 27 - Inch 4K Monitor",
     image: "/m6.jpg",
     price: 38999,
@@ -64,6 +71,7 @@ const products: Product[] = [
   },
   {
     id: 7,
+    slug: "monitor",
     name: "Asus TUF Gaming VG34VQL 34 Inch Curved Monitor",
     image: "/m7.jpg",
     price: 41650,
@@ -71,6 +79,7 @@ const products: Product[] = [
   },
   {
     id: 8,
+    slug: "monitor",
     name: "Asus VZ24EHE 24 Inch Professional Monitor",
     image: "/m3.jpg",
     price: 9540,
@@ -78,6 +87,7 @@ const products: Product[] = [
   },
   {
     id: 9,
+    slug: "monitor",
     name: "AOC 22B30HM2 22 Inch Prof Monitor",
     image: "/m4.jpg",
     price: 19790,

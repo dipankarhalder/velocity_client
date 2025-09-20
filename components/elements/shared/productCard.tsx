@@ -6,6 +6,7 @@ import Link from "next/link";
 
 interface ProductCardProps {
   id: number;
+  slug: string;
   name: string;
   image: string;
   price: number;
@@ -14,6 +15,7 @@ interface ProductCardProps {
 
 export const ProductCard: React.FC<ProductCardProps> = ({
   id,
+  slug,
   name,
   image,
   price,
@@ -21,7 +23,7 @@ export const ProductCard: React.FC<ProductCardProps> = ({
 }) => {
   return (
     <Link
-      href={`/product-details/${id}`}
+      href={`${slug}/${id}`}
       passHref
       className="app_item_product_card"
       role="group"

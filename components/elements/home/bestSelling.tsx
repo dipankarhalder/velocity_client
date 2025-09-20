@@ -13,6 +13,7 @@ import "swiper/css/scrollbar";
 
 interface Product {
   id: number;
+  slug: string;
   name: string;
   image: string;
   price: number;
@@ -22,6 +23,7 @@ interface Product {
 const products: Product[] = [
   {
     id: 1,
+    slug: "processor",
     name: "AMD Ryzen 7 5800X Processor",
     image: "/p1.jpg",
     price: 41650,
@@ -29,6 +31,7 @@ const products: Product[] = [
   },
   {
     id: 2,
+    slug: "storage",
     name: "Crucial P3 Plus 1TB NVMe Gen4 Internal SSD",
     image: "/p2.jpg",
     price: 14900,
@@ -36,6 +39,7 @@ const products: Product[] = [
   },
   {
     id: 3,
+    slug: "memory",
     name: "ASUS Dual RTX 5060 OC 8GB GDDR7 Graphics Card",
     image: "/p3.jpg",
     price: 81250,
@@ -43,6 +47,7 @@ const products: Product[] = [
   },
   {
     id: 4,
+    slug: "memory",
     name: "Dawg Y 990 ARGB E-ATX Mid Tower Case with Pre-installed",
     image: "/p4.jpg",
     price: 141650,
@@ -50,6 +55,7 @@ const products: Product[] = [
   },
   {
     id: 5,
+    slug: "cabinate",
     name: "CyberPower UT2200E 2200VA UPS",
     image: "/p5.jpg",
     price: 49990,
@@ -57,6 +63,7 @@ const products: Product[] = [
   },
   {
     id: 6,
+    slug: "memory",
     name: "ZOTAC RTX 5060 Solo 8GB GDDR7 Graphics Card",
     image: "/p6.jpg",
     price: 38999,
@@ -64,6 +71,7 @@ const products: Product[] = [
   },
   {
     id: 7,
+    slug: "memory",
     name: "MSI RTX 5060 Inspire 2X OC 8GB GDDR7 Graphics Card",
     image: "/p7.jpg",
     price: 41650,
@@ -71,6 +79,7 @@ const products: Product[] = [
   },
   {
     id: 8,
+    slug: "memory",
     name: "ASUS Dual RTX 5060 OC 8GB GDDR7 Graphics Card",
     image: "/p3.jpg",
     price: 9540,
@@ -78,6 +87,7 @@ const products: Product[] = [
   },
   {
     id: 9,
+    slug: "cabinate",
     name: "Dawg Y 990 ARGB E-ATX Mid Tower Case with Pre-installed",
     image: "/p4.jpg",
     price: 19790,
