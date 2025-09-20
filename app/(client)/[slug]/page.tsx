@@ -1,5 +1,7 @@
+import Link from "next/link";
 import Image from "next/image";
 import { Home, Larrow } from "@/components/icons";
+import Products from "@/components/elements/products";
 import { Checkbox } from "./checkbox";
 import insideBanner from "../../../public/banner1.jpg";
 import mb1 from "../../../public/mb1.jpg";
@@ -7,9 +9,6 @@ import mb2 from "../../../public/mb2.png";
 import mb3 from "../../../public/mb3.jpeg";
 import mb4 from "../../../public/mb4.jpg";
 import mb5 from "../../../public/mb5.jpg";
-import Link from "next/link";
-import ProductDetails from "../product-details/page";
-import Products from "../products/page";
 
 type PageProps = {
   params: Promise<{ slug: string }>;
@@ -205,19 +204,7 @@ export default async function CategoryPage({ params }: PageProps) {
               ))}
             </ul>
           </div>
-          {/* <div className="app_main_product_list_container">
-            <h2 id="bestsellers-heading" className="app_heading_info">
-              Best Selling Products
-            </h2>
-            <div className="app_product_list_wrapper">
-              {products.map((item) => (
-                <ProductCard key={item.id} {...item} />
-              ))}
-            </div>
-          </div> */}
-
           <Products />
-          <ProductDetails />
         </div>
       </div>
     </>

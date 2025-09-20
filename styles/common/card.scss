@@ -75,7 +75,7 @@ $items-per-row: 5;
 
     // Figure
 
-    > figure {
+    figure {
       height: auto;
       min-height: rem(215);
       display: flex;
@@ -101,7 +101,7 @@ $items-per-row: 5;
   position: relative;
   @include transition(all, 0.5s, ease);
 
-  > figure {
+  figure {
     height: 140px;
     display: flex;
     width: 100%;
