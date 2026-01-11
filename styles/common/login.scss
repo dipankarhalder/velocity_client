@@ -1,0 +1,155 @@
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+  }
+
+  to {
+    opacity: 1;
+  }
+}
+
+@keyframes slideUp {
+  from {
+    transform: translateY(80px);
+    opacity: 0;
+  }
+
+  to {
+    transform: translateY(0);
+    opacity: 1;
+  }
+}
+
+.app_login_popup {
+  position: fixed;
+  top: 0px;
+  left: 0px;
+  width: 100%;
+  height: 100vh;
+  z-index: 6;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  opacity: 0;
+  background: rgba(0, 0, 0, 0.9);
+  animation: fadeIn 0.35s ease forwards;
+
+  .app_inside_login_app {
+    display: flex;
+    background: $white;
+    width: 900px;
+    height: auto;
+    overflow: hidden;
+    border-radius: 10px;
+    transform: translateY(80px);
+    opacity: 0;
+    animation: slideUp 0.5s ease-out forwards;
+
+    .app_login_left_side {
+      width: 50%;
+      padding: 30px 40px;
+
+      .app_heading_log {
+        width: 100%;
+        display: flex;
+        flex-direction: column;
+
+        .app_heading_inside_log {
+          display: flex;
+          width: 100%;
+          margin-bottom: 10px;
+          justify-content: space-between;
+
+          h2 {
+            font-size: 19px;
+            font-weight: 700;
+            text-align: center;
+          }
+
+          .app_cross_btn {
+            border: 0px solid transparent;
+            background: none;
+            width: 20px;
+            height: 20px;
+            position: relative;
+            top: -10px;
+            right: -20px;
+          }
+        }
+
+        .app_sub_heading {
+          width: 100%;
+          margin-bottom: 40px;
+
+          p {
+            font-size: 13px;
+            font-weight: 700;
+            color: darken($price, 6%);
+            transition: 0.5s;
+          }
+        }
+      }
+
+      .app_login_form_inside {
+        width: 100%;
+
+        form {
+          width: 100%;
+          display: flex;
+          flex-direction: column;
+          gap: 12px;
+
+          .app_field_item {
+            width: 100%;
+            display: flex;
+            flex-direction: column;
+            gap: 4px;
+
+            p {
+              width: 100%;
+              font-size: 13px;
+              font-weight: 700;
+              color: darken($price, 6%);
+            }
+
+            input {
+              width: 100%;
+              height: 40px;
+              padding: 0 16px;
+              border: 1px solid $border;
+              border-radius: 8px;
+            }
+          }
+
+          .app_login_btn {
+            width: 100%;
+
+            button {
+              width: auto;
+              height: 38px;
+              padding: 10px 26px;
+              font-size: 13px;
+              font-weight: 700;
+              color: $white;
+              background: $btn;
+              border: none;
+              border-radius: 8px;
+              display: flex;
+              align-items: center;
+            }
+          }
+        }
+      }
+    }
+
+    .app_login_right_side {
+      width: 50%;
+
+      img {
+        position: relative !important;
+        width: 100% !important;
+        height: auto !important;
+      }
+    }
+  }
+}

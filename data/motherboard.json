@@ -1,0 +1,191 @@
+[
+  {
+    "id": 1,
+    "slug": "motherboard",
+    "image": "/motherboard/mth1.jpg",
+    "name": "MSI Pro H610M-S DDR4 Motherboard",
+    "price": 3760,
+    "discount": 4,
+    "rating": 4.5,
+    "reviewsCount": 1004,
+    "stock": 8,
+    "brand": "Intel",
+    "specifications": {
+      "Cores/Threads": "8/16",
+      "Base Clock": "3.8GHz",
+      "Max Boost Clock": "4.7GHz",
+      "Socket": "Intel",
+      "TDP": "105W",
+      "Cache": "36MB",
+      "Architecture": "Core i3"
+    }
+  },
+  {
+    "id": 2,
+    "slug": "motherboard",
+    "image": "/motherboard/mth2.jpeg",
+    "name": "ASRock H610M-HVS/M.2 R2.0 DDR4 M-ATX Motherboard",
+    "price": 4760,
+    "discount": 4,
+    "rating": 4.5,
+    "reviewsCount": 1004,
+    "stock": 8,
+    "brand": "Intel",
+    "specifications": {
+      "Cores/Threads": "8/16",
+      "Base Clock": "3.8GHz",
+      "Max Boost Clock": "4.7GHz",
+      "Socket": "Intel",
+      "TDP": "105W",
+      "Cache": "36MB",
+      "Architecture": "Core i3"
+    }
+  },
+  {
+    "id": 3,
+    "slug": "motherboard",
+    "image": "/motherboard/mth3.jpeg",
+    "name": "Asus Prime A520M-K/CSM M-ATX Motherboard",
+    "price": 3760,
+    "discount": 4,
+    "rating": 4.5,
+    "reviewsCount": 1004,
+    "stock": 8,
+    "brand": "Intel",
+    "specifications": {
+      "Cores/Threads": "8/16",
+      "Base Clock": "3.8GHz",
+      "Max Boost Clock": "4.7GHz",
+      "Socket": "Intel",
+      "TDP": "105W",
+      "Cache": "36MB",
+      "Architecture": "Core i3"
+    }
+  },
+  {
+    "id": 4,
+    "slug": "motherboard",
+    "image": "/motherboard/mth4.jpg",
+    "name": "GIGABYTE H610M K DDR4 M-ATX Motherboard",
+    "price": 4760,
+    "discount": 4,
+    "rating": 4.5,
+    "reviewsCount": 1004,
+    "stock": 8,
+    "brand": "Intel",
+    "specifications": {
+      "Cores/Threads": "8/16",
+      "Base Clock": "3.8GHz",
+      "Max Boost Clock": "4.7GHz",
+      "Socket": "Intel",
+      "TDP": "105W",
+      "Cache": "36MB",
+      "Architecture": "Core i3"
+    }
+  },
+  {
+    "id": 5,
+    "slug": "motherboard",
+    "image": "/motherboard/mth5.jpg",
+    "name": "MSI B450M-A Pro Max II Motherboard",
+    "price": 5660,
+    "discount": 4,
+    "rating": 4.5,
+    "reviewsCount": 1004,
+    "stock": 8,
+    "brand": "Intel",
+    "specifications": {
+      "Cores/Threads": "8/16",
+      "Base Clock": "3.8GHz",
+      "Max Boost Clock": "4.7GHz",
+      "Socket": "Intel",
+      "TDP": "105W",
+      "Cache": "36MB",
+      "Architecture": "Core i3"
+    }
+  },
+  {
+    "id": 6,
+    "slug": "motherboard",
+    "image": "/motherboard/mth6.jpg",
+    "name": "ASRock H610M-X D5 M-ATX Motherboard",
+    "price": 3760,
+    "discount": 4,
+    "rating": 4.5,
+    "reviewsCount": 1004,
+    "stock": 8,
+    "brand": "Intel",
+    "specifications": {
+      "Cores/Threads": "8/16",
+      "Base Clock": "3.8GHz",
+      "Max Boost Clock": "4.7GHz",
+      "Socket": "Intel",
+      "TDP": "105W",
+      "Cache": "36MB",
+      "Architecture": "Core i3"
+    }
+  },
+  {
+    "id": 7,
+    "slug": "motherboard",
+    "image": "/motherboard/mth7.jpeg",
+    "name": "GIGABYTE H610M H V3 DDR4 M-ATX Motherboard",
+    "price": 5760,
+    "discount": 4,
+    "rating": 4.5,
+    "reviewsCount": 1004,
+    "stock": 8,
+    "brand": "Intel",
+    "specifications": {
+      "Cores/Threads": "8/16",
+      "Base Clock": "3.8GHz",
+      "Max Boost Clock": "4.7GHz",
+      "Socket": "Intel",
+      "TDP": "105W",
+      "Cache": "36MB",
+      "Architecture": "Core i3"
+    }
+  },
+  {
+    "id": 8,
+    "slug": "motherboard",
+    "image": "/motherboard/mth8.jpg",
+    "name": "Gigabyte H310M M.2 2.0 DDR4 M-ATX Motherboard",
+    "price": 7000,
+    "discount": 4,
+    "rating": 4.5,
+    "reviewsCount": 1004,
+    "stock": 8,
+    "brand": "Intel",
+    "specifications": {
+      "Cores/Threads": "8/16",
+      "Base Clock": "3.8GHz",
+      "Max Boost Clock": "4.7GHz",
+      "Socket": "Intel",
+      "TDP": "105W",
+      "Cache": "36MB",
+      "Architecture": "Core i3"
+    }
+  },
+  {
+    "id": 9,
+    "slug": "motherboard",
+    "image": "/motherboard/mth9.jpeg",
+    "name": "ASRock Q270 Pro BTC Plus ATX DDR4 Motherboard",
+    "price": 4760,
+    "discount": 4,
+    "rating": 4.5,
+    "reviewsCount": 1004,
+    "stock": 8,
+    "brand": "Intel",
+    "specifications": {
+      "Cores/Threads": "8/16",
+      "Base Clock": "3.8GHz",
+      "Max Boost Clock": "4.7GHz",
+      "Socket": "Intel",
+      "TDP": "105W",
+      "Cache": "36MB",
+      "Architecture": "Core i3"
+    }
+  }
+]

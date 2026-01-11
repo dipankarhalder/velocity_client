@@ -1,0 +1,1106 @@
+.app_inside_banner {
+  display: flex;
+  width: 100%;
+  position: relative;
+  height: 220px;
+  margin-bottom: 10px;
+
+  img {
+    width: 100%;
+    border-radius: 8px;
+    height: auto !important;
+  }
+}
+
+.app_bradecumb {
+  display: flex;
+  width: 100%;
+
+  >ul {
+    width: 100%;
+    display: flex;
+    align-items: center;
+    gap: 8px;
+
+    >li {
+      display: flex;
+      gap: 8px;
+      text-transform: capitalize;
+      font-size: 14px;
+      font-weight: 700;
+
+      >span {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        width: 18px;
+        height: 18px;
+
+        >svg.app_brd_home {
+          width: 18px;
+          height: 18px;
+        }
+
+        >svg.app_brd_arrow {
+          width: 14px;
+          height: 14px;
+        }
+      }
+    }
+  }
+}
+
+.app_main_page_content {
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  width: 100%;
+  margin-top: 30px;
+  gap: 18px;
+
+  .app_sidebar_filter {
+    width: calc(16% - 9px);
+
+    h5 {
+      font-size: 15px;
+      margin-bottom: 10px;
+    }
+
+    .app_filter_inside {
+      width: 100%;
+      display: flex;
+      flex-direction: column;
+
+      .app_filter_items {
+        display: flex;
+        flex-direction: column;
+        margin-bottom: 10px;
+        border-radius: 8px;
+        overflow: hidden;
+        border: 1px solid lighten($bgcategory, 16%);
+
+        h6 {
+          padding: 8px 18px;
+          font-size: 13px;
+          background: $bgnewcatg;
+          border-bottom: 1px solid lighten($bgcategory, 16%);
+        }
+
+        ul {
+          padding: 12px 18px;
+
+          li {
+            display: flex;
+            margin-bottom: 6px;
+
+            &:last-child {
+              margin-bottom: 0px;
+            }
+
+            >label {
+              display: flex;
+              gap: 8px;
+              width: 100%;
+              cursor: pointer;
+
+              >p {
+                font-size: 14px;
+                font-weight: 700;
+                transition: 0.5s;
+              }
+            }
+
+            &:hover label {
+              >p {
+                color: $btn;
+                transition: 0.5s;
+              }
+            }
+          }
+        }
+      }
+    }
+  }
+
+  .app_main_list_content_area {
+    width: calc(84% - 9px);
+
+    h4 {
+      font-size: 20px;
+      text-transform: capitalize;
+    }
+
+    .app_main_product_category {
+      display: flex;
+      width: 100%;
+      margin: 20px 0px;
+      flex-direction: column;
+
+      h6 {
+        color: darken($price, 10%);
+        font-size: 14px;
+        margin-bottom: 4px;
+        text-transform: capitalize;
+      }
+
+      >ul {
+        display: flex;
+        width: 100%;
+        gap: 16px;
+
+        >li {
+          display: flex;
+          width: 20%;
+          padding: 0px 12px;
+          border-radius: 10px;
+          align-items: center;
+          background: $bgnewcatg;
+          border: 1px solid lighten($bgcategory, 16%);
+
+          >span {
+            position: relative;
+            display: flex;
+            width: 83px;
+            height: 70px;
+
+            >img {
+              width: 70px !important;
+              mix-blend-mode: darken;
+            }
+          }
+
+          .app_text_head_dis {
+            display: flex;
+            flex-direction: column;
+
+            >h4 {
+              font-size: 17px;
+              font-weight: 800;
+              line-height: 1.2;
+            }
+
+            >p {
+              font-size: 13px;
+              font-weight: 600;
+            }
+          }
+        }
+      }
+    }
+
+    .app_chipset_list_items {
+      width: 100%;
+
+      h6 {
+        color: darken($price, 10%);
+        font-size: 14px;
+        margin-bottom: 4px;
+        text-transform: capitalize;
+      }
+
+      ul {
+        width: 100%;
+        display: flex;
+        flex-wrap: wrap;
+        gap: 6px;
+
+        >li {
+          display: flex;
+
+          >a {
+            display: flex;
+            gap: 4px;
+            padding: 5px 11px 5px 16px;
+            border-radius: 8px;
+            align-items: center;
+            border: 1px solid $border;
+            transition: 0.5s;
+
+            >p {
+              color: $black;
+              font-size: 13px;
+              font-weight: 700;
+              transition: 0.5s;
+            }
+
+            >span {
+              width: 12px;
+              height: 12px;
+              margin-top: -1px;
+              margin-left: 3px;
+
+              >svg {
+                width: 12px;
+                height: 12px;
+                transition: 0.5s;
+              }
+            }
+
+            &:hover {
+              background: lighten($btn, 46%);
+              border: 1px solid $btn;
+              transition: 0.5s;
+
+              >p {
+                color: $btn;
+                transition: 0.5s;
+              }
+
+              >span>svg {
+                color: $btn;
+                transition: 0.5s;
+              }
+            }
+          }
+        }
+      }
+    }
+  }
+}
+
+.app_build_main_content_list {
+  width: 100%;
+  display: flex;
+  justify-content: space-between;
+  margin-bottom: 100px;
+
+  .app_build_mian_area {
+    width: 70%;
+  }
+
+  .app_price_calculation {
+    width: 28%;
+    margin-top: 68px;
+
+    .app_inside_cal {
+      overflow: hidden;
+      border-radius: 10px;
+      border: 1px solid $border;
+
+      .app_right_side_price {
+        h6 {
+          font-size: 17px;
+          font-weight: 700;
+          padding: 12px 16px;
+          margin-bottom: 5px;;
+        }
+
+        > ul {
+          display: flex;
+          flex-direction: column;
+          padding: 10px 16px;
+          gap: 6px;
+
+          > li {
+            display: flex;
+            justify-content: space-between;
+
+            p.app_price_col_data {
+              font-size: 15px;
+              font-weight: 700;
+              color: $black;
+            }
+          }
+        }
+
+        >span.no_select {
+          padding: 8px 16px;
+          color: $price;
+        }
+      }
+
+      .app_total_price {
+        padding: 10px 16px;
+        display: flex;
+        margin-top: 20px;
+        background: lighten($border, 16%);
+        justify-content: space-between;
+
+        .total_price {
+          font-size: 17px;
+          font-weight: 700;
+          color: $btn;
+        }
+      }
+    }
+
+    .download_print {
+      display: flex;
+      margin-top: 10px;
+      gap: 10px;
+      justify-content: flex-end;
+
+      button {
+        display: flex;
+        align-items: center;
+        font-size: 13px;
+        font-weight: 700;
+        gap: 8px;
+        height: 32px;
+        border-radius: 5px;
+        padding: 0px 13px 0px 10px;
+
+        &:disabled {
+          opacity: 0.5;
+          cursor: not-allowed;
+        }
+
+        &:nth-child(2), &:nth-child(3) {
+          color: $btn;
+          background: $btnLight;
+          border: 1px solid $btn;
+        }
+
+        &:nth-child(1) {
+          color: $white;
+          background: $btn;
+          border: 1px solid $btn;
+        }
+
+        >span {
+          width: 16px;
+          height: 16px;
+          margin-top: -1px;
+          margin-left: 3px;
+
+          >svg {
+            width: 16px;
+            height: 16px;
+            transition: 0.5s;
+          }
+        }
+      }
+    }
+  }
+}
+
+.app_category_build_item {
+  display: flex;
+  width: 100%;
+  margin-top: 30px;
+  flex-direction: column;
+
+  >h5 {
+    color: darken($price, 16%);
+    font-size: 14px;
+    margin-bottom: 16px;
+    text-transform: capitalize;
+  }
+
+  >ul {
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+    gap: 10px;
+
+    >li {
+      gap: 10px;
+      width: 100%;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      position: relative;
+      border-radius: 10px;
+      padding: 10px 14px;
+      background: $bgnewcatg;
+      border: 1px solid lighten($bgcategory, 16%);
+
+      .app_open_pop {
+        display: flex;
+        cursor: pointer;
+
+        >span {
+          width: 20px;
+          height: 20px;
+          color: $price;
+
+          >svg {
+            width: 20px;
+            height: 20px;
+          }
+        }
+      }
+
+      .app_row_btns_itm {
+        width: 100%;
+        display: flex;
+        align-items: center;
+      }
+
+      .app_left_side_build {
+        gap: 14px;
+        display: flex;
+        width: 100%;
+        align-items: center;
+
+        >span {
+          position: relative;
+          display: flex;
+          width: 36px;
+          height: 36px;
+          justify-content: center;
+
+          >svg {
+            width: 36px;
+            height: 36px;
+          }
+
+          >img {
+            width: 80px !important;
+            mix-blend-mode: darken;
+          }
+        }
+
+        >h6 {
+          font-size: 16px;
+          font-weight: 700;
+          line-height: 1.2;
+        }
+      }
+
+      .app_selected_item {
+        gap: 16px;
+        display: flex;
+        width: 100%;
+        align-items: center;
+        background: $white;
+        padding: 10px 16px;
+        border-radius: 6px;
+        border: 1px solid lighten($bgcategory, 20%);
+
+        > article {
+          display: flex;
+          width: 100%;
+
+          >figure {
+            height: 60px;
+            width: 60px;
+            display: flex;
+            display: flex;
+            position: relative;
+            align-items: center;
+            margin-right: 20px;
+
+            >img {
+              width: 60px;
+              height: 60px;
+            }
+          }
+
+          .product_card_details {
+            width: 100%;
+            display: flex;
+            padding: 0px;
+            align-items: center;
+            justify-content: space-between;
+
+            .product_card_left {
+              width: 80%;
+              display: flex;
+              align-items: center;
+              justify-content: space-between;
+              gap: 46px;
+
+              >h3 {
+                width: auto;
+                font-size: 15px;
+                font-weight: 700;
+                text-align: left;
+                margin-bottom: 0px;
+              }
+
+              .app_price_and_btn {
+                display: flex;
+                width: auto;
+                flex-direction: column;
+                align-items: center;
+
+                .app_product_price_sec {
+                  display: flex;
+                  margin-bottom: 0px;
+                  flex-direction: row;
+                  align-items: center;
+
+                  >p {
+                    &.discount_prc > strong {
+                      font-size: 15px;
+                      font-weight: 700;
+                      color: $btn;
+                    }
+                    
+                    &:nth-child(2) {
+                      font-size: 13px;
+                      color: $price;
+                      margin-left: 16px;
+                      text-decoration: line-through;
+                    }
+                  }
+                }
+              }
+
+              .app_btn_add {
+                display: flex;
+
+                >button {
+                  color: $btn;
+                  font-size: 13px;
+                  font-weight: 700;
+                  padding: 4px 20px;
+                  background: $btnLight;
+                  height: 28px;
+                  cursor: pointer;
+                  border-radius: 5px;
+                  border: 1px solid $btn;
+                }
+
+                .app_btn_quantity {
+                  display: flex;
+                  gap: 4px;
+                  background: $btn;
+                  border-radius: 5px;
+                  align-items: center;
+
+                  >span {
+                    width: 20px;
+                    height: 20px;
+                    text-align: center;
+                    font-size: 13px;
+                    font-weight: 800;
+                    color: $white;
+                  }
+
+                  button {
+                    color: $btn;
+                    font-size: 20px;
+                    font-weight: 700;
+                    background: $btnLight;
+                    width: 28px;
+                    height: 28px;
+                    cursor: pointer;
+                    border-radius: 5px;
+                    line-height: 16px;
+                    border: 1px solid $btn;
+                  }
+                }
+              }
+            }
+
+            .app_action_btns {
+              display: flex;
+              gap: 20px;
+
+              button {
+                color: $btn;
+                font-size: 14px;
+                font-weight: 700;
+                background: transparent;
+                width: 20px;
+                height: 20px;
+                cursor: pointer;
+                border-radius: 5px;
+                line-height: 16px;
+                border: 0px solid transparent;
+              }
+            }
+          }
+        }
+      }
+
+      .app_status_update {
+        position: absolute;
+        top: -8px;
+        right: -8px;
+        width: 22px;
+        height: 22px;
+
+        &:after {
+          position: absolute;
+          content: "";
+          width: 10px;
+          height: 10px;
+          top: 6px;
+          left: 6px;
+          background: lighten($green, 62%);
+          z-index: 1;
+        }
+
+        >span {
+          width: 22px;
+          height: 22px;
+          position: relative;
+          z-index: 2;
+
+          >svg {
+            width: 22px;
+            height: 22px;
+
+            >path {
+              fill: $green;
+            }
+          }
+        }
+      }
+
+      &.active_item_list {
+        background: lighten($green, 62%);
+        border: 1px solid $green;
+
+        &::after {
+          position: absolute;
+          content: "";
+          width: 0px;
+          height: 0px;
+          top: 100%;
+          left: 50%;
+          transform: translateX(-50%);
+          border-top: 7px solid $green;
+          border-left: 7px solid transparent;
+          border-right: 7px solid transparent;
+        }
+
+        .app_left_side_build {
+          h6 {
+            color: $green;
+          }
+
+          >span>svg>path {
+            stroke: darken($green, 10%);
+          }
+        }
+      }
+    }
+  }
+
+  .app_build_product_view_sec {
+    display: flex;
+    width: 100%;
+    margin-top: 16px;
+    flex-direction: column;
+    border-radius: 12px;
+    background: lighten($topbg, 3%);
+    padding: 12px 20px;
+
+    .app_builder_heading {
+      display: flex;
+      align-items: center;
+      width: 100%;
+      margin-bottom: 10px;
+      gap: 10px;
+
+      >span {
+        position: relative;
+        display: flex;
+        width: 26px;
+        height: 26px;
+        justify-content: center;
+
+        >svg {
+          width: 26px;
+          height: 26px;
+        }
+      }
+
+      >h3 {
+        color: darken($price, 20%);
+        font-size: 15px;
+        text-transform: capitalize;
+      }
+    }
+
+    >ul {
+      display: flex;
+      width: 100%;
+      flex-wrap: wrap;
+      gap: 12px;
+
+      >li {
+        width: calc(19.24% - 2px);
+
+        .app_item_product_card {
+          box-sizing: border-box;
+          width: 100%;
+          box-shadow: none;
+          border-radius: 6px;
+          display: flex;
+          flex-direction: column;
+          align-items: center;
+          padding: 2px 12px 16px;
+          position: relative;
+
+          >figure {
+            height: 80px;
+            display: flex;
+            width: 100%;
+            display: flex;
+            position: relative;
+            align-items: center;
+            margin-bottom: 6px;
+
+            >img {
+              width: 80px;
+              height: 80px;
+            }
+          }
+
+          >h3 {
+            font-size: 12px;
+            font-weight: 700;
+            text-align: center;
+            margin-bottom: 10px;
+          }
+
+          .app_discount_price {
+            position: absolute;
+            top: 10px;
+            right: 0px;
+            color: $white;
+            background: $btn;
+            font-size: 11px;
+            font-weight: 800;
+            padding: 4px 10px 3px 10px;
+            border-radius: 6px 0 0 6px;
+          }
+
+          .app_price_and_btn {
+            display: flex;
+            width: 100%;
+            flex-direction: column;
+            align-items: center;
+            justify-content: space-between;
+
+            .app_product_price_sec {
+              display: flex;
+              flex-direction: column;
+              margin-bottom: 14px;
+              align-items: center;
+
+              >p {
+                font-size: 15px;
+                font-weight: 700;
+                color: $btn;
+
+                &:nth-child(2) {
+                  font-size: 13px;
+                  color: $price;
+                  text-decoration: line-through;
+                }
+              }
+            }
+
+            .app_btn_add {
+              display: flex;
+
+              >button {
+                color: $btn;
+                font-size: 13px;
+                font-weight: 700;
+                padding: 4px 20px;
+                background: $btnLight;
+                height: 28px;
+                cursor: pointer;
+                border-radius: 5px;
+                border: 1px solid $btn;
+              }
+
+              .app_btn_quantity {
+                display: flex;
+                gap: 4px;
+                background: $btn;
+                border-radius: 5px;
+                align-items: center;
+
+                >span {
+                  width: 20px;
+                  height: 20px;
+                  text-align: center;
+                  font-size: 13px;
+                  font-weight: 800;
+                  color: $white;
+                }
+
+                button {
+                  color: $btn;
+                  font-size: 20px;
+                  font-weight: 700;
+                  background: $btnLight;
+                  width: 28px;
+                  height: 28px;
+                  cursor: pointer;
+                  border-radius: 5px;
+                  line-height: 16px;
+                  border: 1px solid $btn;
+                }
+              }
+            }
+          }
+        }
+
+        &.active_item .app_item_product_card {
+          border: 1px solid $green;
+
+          &:after {
+            content: "";
+            position: absolute;
+            right: 9px;
+            top: 9px;
+            width: 10px;
+            height: 10px;
+            border-radius: 50%;
+            background: $green;
+          }
+
+          &:before {
+            content: "";
+            position: absolute;
+            right: 4px;
+            top: 4px;
+            width: 20px;
+            height: 20px;
+            border-radius: 50%;
+            background: lighten($green, 58%);
+          }
+
+          .app_btn_add {
+            >button {
+              color: $white;
+              background: $green;
+            }
+          }
+        }
+      }
+    }
+  }
+}
+
+.app_build_pc_popup {
+  position: fixed;
+  top: 0;
+  left: 0px;
+  width: 100%;
+  height: 100vh;
+  background: rgba(0, 0, 0, 0.86);
+  z-index: 99;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  .app_span_overlay {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    top: 0px;
+    left: 0px;
+  }
+
+  .app_pop_build_inside {
+    width: 70%;
+    gap: 15px;
+    border-radius: 8px;
+    background: $white;
+    padding: 30px 40px;
+    display: flex;
+    flex-direction: column;
+    position: relative;
+    z-index: 991;
+
+    h5 {
+      font-size: 18px;
+      font-weight: 700;
+    }
+
+    .app_list_items_pop {
+      width: 100%;
+      height: 600px;
+      overflow: auto;
+
+      > ul {
+        width: 100%;
+        display: flex;
+        flex-direction: column;
+
+        .app_item_product_card {
+          box-sizing: border-box;
+          width: 100%;
+          display: flex;
+          flex-direction: column;
+          align-items: center;
+          padding: 14px 0px;
+          position: relative;
+          border-radius: 0px;
+          border-bottom: 1px solid lighten($bgcategory, 20%);
+
+          &:hover {
+            box-shadow: none;
+          }
+
+          > article {
+            display: flex;
+            width: 100%;
+
+            >figure {
+              height: 60px;
+              width: 60px;
+              display: flex;
+              display: flex;
+              position: relative;
+              align-items: center;
+              margin-right: 20px;
+
+              >img {
+                width: 60px;
+                height: 60px;
+              }
+            }
+
+            .product_card_details {
+              width: 100%;
+              display: flex;
+              padding: 0px;
+              align-items: center;
+              justify-content: space-between;
+
+              .product_card_left {
+                width: 58%;
+                display: flex;
+                justify-content: space-between;
+                gap: 46px;
+
+                >h3 {
+                  width: auto;
+                  font-size: 15px;
+                  font-weight: 700;
+                  text-align: left;
+                  margin-bottom: 0px;
+                }
+
+                .app_price_and_btn {
+                  display: flex;
+                  width: auto;
+                  flex-direction: column;
+                  align-items: center;
+
+                  .app_product_price_sec {
+                    display: flex;
+                    margin-bottom: 0px;
+                    flex-direction: row;
+                    align-items: center;
+
+                    >p {
+                      &.discount_prc > strong {
+                        font-size: 15px;
+                        font-weight: 700;
+                        color: $btn;
+                      }
+                      
+                      &:nth-child(2) {
+                        font-size: 13px;
+                        color: $price;
+                        text-decoration: line-through;
+                      }
+                    }
+                  }
+                }
+              }
+
+              .product_card_btn{
+                display: flex;
+                gap: 20px;
+                width: auto;
+                justify-content: flex-end;
+
+                .product_stock {
+                  display: flex;
+                  width: auto;
+                  align-items: center;
+                  gap: 8px;
+
+                  > span {
+                    font-weight: 500;
+                    font-size: 13px;
+                  }
+
+                  >p {
+                    font-size: 15px;
+                    font-weight: 700;
+                    color: $green;
+                  }
+                }
+
+                .app_btn_add {
+                  display: flex;
+
+                  >button {
+                    color: $btn;
+                    font-size: 13px;
+                    font-weight: 700;
+                    padding: 4px 20px;
+                    background: $btnLight;
+                    height: 28px;
+                    cursor: pointer;
+                    border-radius: 5px;
+                    border: 1px solid $btn;
+                  }
+
+                  .app_btn_quantity {
+                    display: flex;
+                    gap: 4px;
+                    background: $btn;
+                    border-radius: 5px;
+                    align-items: center;
+
+                    >span {
+                      width: 20px;
+                      height: 20px;
+                      text-align: center;
+                      font-size: 13px;
+                      font-weight: 800;
+                      color: $white;
+                    }
+
+                    button {
+                      color: $btn;
+                      font-size: 20px;
+                      font-weight: 700;
+                      background: $btnLight;
+                      width: 28px;
+                      height: 28px;
+                      cursor: pointer;
+                      border-radius: 5px;
+                      line-height: 16px;
+                      border: 1px solid $btn;
+                    }
+                  }
+                }
+
+                .products_select_btn {
+                  display: flex;
+
+                  >span {
+                    height: 28px;
+                    width: auto;
+                    text-align: center;
+                    font-size: 13px;
+                    font-weight: 800;
+                    line-height: 28px;
+                    color: $white;
+                    background: $btn;
+                    padding: 0px 14px;
+                    border-radius: 5px;
+                    cursor: pointer;
+                  }
+                }
+              }
+            }
+          }
+        }
+      }
+
+      .no_items_avl {
+        text-align: center;
+        padding: 60px 10px;
+        border-radius: 8px;
+        border: 1px solid lighten($bgcategory, 20%);
+      }
+    }
+  }
+}

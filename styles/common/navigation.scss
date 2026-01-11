@@ -1,0 +1,255 @@
+// ================================
+// Mixins
+// ================================
+@mixin icon-size($size: $icon-size) {
+  width: $size;
+  height: $size;
+
+  svg {
+    width: $size;
+    height: $size;
+  }
+}
+
+.grid_center {
+  display: grid;
+  align-items: center;
+}
+
+// ================================
+// Layout
+// ================================
+.app_navigation {
+  display: grid;
+  width: 100%;
+  padding: 18px 0;
+  position: sticky;
+  top: 74px;
+  background: $gradient-white;
+  z-index: 5;
+
+  .app_nav_wrapper {
+    @extend .grid_center;
+    grid-template-columns: 1fr auto;
+    width: 100%;
+
+    .app_nav_items {
+      @extend .grid_center;
+      grid-template-columns: auto 1fr;
+      gap: 110px;
+
+      .app_categry_navigation {
+        position: relative;
+
+        .app_nav_category {
+          @extend .grid_center;
+          grid-auto-flow: column;
+          background: $transparent;
+          cursor: pointer;
+          gap: 10px;
+          border: 0;
+
+          >span {
+            @include icon-size(24px);
+          }
+
+          p {
+            color: $black;
+            font-size: 16px;
+            font-weight: 800;
+          }
+        }
+
+        .app_nav_child_section {
+          position: absolute;
+          width: 220px;
+          padding-top: 18px;
+          display: none;
+
+          >ul {
+            display: flex;
+            width: 100%;
+            flex-direction: column;
+            background: $white;
+            box-shadow: 1px 2px 5px rgba(0, 0, 0, 0.12);
+
+            >li {
+              width: 100%;
+              transition: 0.5s;
+              border-bottom: 1px solid $btnLight;
+
+              >a {
+                display: flex;
+                padding: 14px 20px;
+                align-items: center;
+                gap: 8px;
+
+                >span {
+                  width: 24px;
+                  height: 24px;
+
+                  >svg {
+                    width: 24px;
+                    height: 24px;
+
+                    >path {
+                      transition: 0.5s;
+                    }
+                  }
+                }
+
+                >p {
+                  font-size: 15px;
+                  font-weight: 700;
+                  color: $black;
+                  transition: 0.5s;
+                }
+              }
+
+              &:hover {
+                background: $hoverbg;
+                transition: 0.5s;
+
+                >a {
+                  >span {
+                    svg path {
+                      stroke: darken($btn, 6%);
+                      transition: 0.5s;
+                    }
+
+                    &.svg_item_color svg path {
+                      fill: darken($btn, 6%);
+                      stroke-width: 0;
+                      transition: 0.5s;
+                    }
+                  }
+
+                  >p {
+                    color: darken($btn, 6%);
+                    transition: 0.5s;
+                  }
+                }
+              }
+            }
+          }
+        }
+
+        &:hover {
+          .app_nav_child_section {
+            display: inline-block;
+          }
+        }
+      }
+
+      >ul.app_nav_links {
+        display: flex;
+        gap: 30px;
+
+        >li {
+          position: relative;
+          cursor: pointer;
+
+          .app_nav_gaming {
+            display: grid;
+            align-items: center;
+            grid-auto-flow: column;
+            background: $transparent;
+            border: 0;
+            gap: 4px;
+
+            >span {
+              &:nth-child(1) {
+                font-size: 15px;
+                font-weight: 700;
+              }
+
+              &:nth-child(2) {
+                @include icon-size(15px);
+              }
+            }
+          }
+
+          .app_dropdown_menu {
+            position: absolute;
+            left: 0px;
+            top: 100%;
+            width: 760px;
+            padding-top: 18px;
+            display: none;
+
+            &>ul {
+              padding: 0px 30px 26px;
+              display: flex;
+              flex-wrap: wrap;
+              gap: 10px;
+              background: $white;
+              border-radius: 0 0 8px 8px;
+              box-shadow: 0px 2px 4px rgba(0, 0, 0, 0.06);
+
+              &>li {
+                box-sizing: border-box;
+                padding: 4px 14px;
+                border-radius: 6px;
+                width: calc(33.3% - 6.8px);
+                border: 1px solid lighten($lborder, 9%);
+                transition: 0.5s;
+
+                &>a {
+                  display: flex;
+                  align-items: center;
+                  gap: 12px;
+
+                  >img {
+                    position: relative !important;
+                    width: 70px !important;
+                    height: 70px !important;
+                  }
+
+                  >p {
+                    font-size: 13px;
+                    font-weight: 700;
+                    color: $black;
+                  }
+                }
+
+                &:hover {
+                  transition: 0.5s;
+                  border: 1px solid $btn;
+
+                  &>a {
+                    &>p {
+                      color: $btn;
+                    }
+                  }
+                }
+              }
+            }
+          }
+
+          &:hover .app_dropdown_menu {
+            display: inline-block;
+          }
+        }
+      }
+    }
+
+    .app_nav_offers {
+      >a {
+        @extend .grid_center;
+        grid-auto-flow: column;
+        gap: 8px;
+
+        >span {
+          color: $btn;
+          @include icon-size(24px);
+        }
+
+        >p {
+          color: $btn;
+          font-size: 16px;
+          font-weight: 700;
+        }
+      }
+    }
+  }
+}

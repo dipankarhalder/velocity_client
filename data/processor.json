@@ -1,0 +1,269 @@
+[
+  {
+    "id": 1,
+    "slug": "processor",
+    "image": "/processor/proc1.png",
+    "name": "Inter Core i3 2nd Gen Processor",
+    "price": 1760,
+    "discount": 4,
+    "rating": 4.5,
+    "reviewsCount": 1004,
+    "stock": 8,
+    "brand": "Intel",
+    "specifications": {
+      "Cores/Threads": "8/16",
+      "Base Clock": "3.8GHz",
+      "Max Boost Clock": "4.7GHz",
+      "Socket": "Intel",
+      "TDP": "105W",
+      "Cache": "36MB",
+      "Architecture": "Core i3"
+    }
+  },
+  {
+    "id": 2,
+    "slug": "processor",
+    "image": "/processor/proc2.jpg",
+    "name": "Inter Core i5 4th Gen Processor",
+    "price": 7860,
+    "discount": 0,
+    "rating": 4.1,
+    "reviewsCount": 564,
+    "stock": 13,
+    "brand": "Intel",
+    "specifications": {
+      "Cores/Threads": "8/16",
+      "Base Clock": "3.8GHz",
+      "Max Boost Clock": "4.7GHz",
+      "Socket": "Intel",
+      "TDP": "105W",
+      "Cache": "36MB",
+      "Architecture": "Core i5"
+    }
+  },
+  {
+    "id": 3,
+    "slug": "processor",
+    "image": "/processor/proc3.jpg",
+    "name": "Inter Core i3 6th Gen Processor",
+    "price": 4860,
+    "discount": 0,
+    "rating": 4.8,
+    "reviewsCount": 34,
+    "stock": 8,
+    "brand": "Intel",
+    "specifications": {
+      "Cores/Threads": "8/16",
+      "Base Clock": "3.8GHz",
+      "Max Boost Clock": "4.7GHz",
+      "Socket": "Intel",
+      "TDP": "105W",
+      "Cache": "36MB",
+      "Architecture": "Core i3"
+    }
+  },
+  {
+    "id": 4,
+    "slug": "processor",
+    "image": "/processor/proc4.webp",
+    "name": "Inter Core i3 7th Gen Processor",
+    "price": 9050,
+    "discount": 6,
+    "rating": 4.1,
+    "reviewsCount": 44,
+    "stock": 8,
+    "brand": "Intel",
+    "specifications": {
+      "Cores/Threads": "8/16",
+      "Base Clock": "3.8GHz",
+      "Max Boost Clock": "4.7GHz",
+      "Socket": "Intel",
+      "TDP": "105W",
+      "Cache": "36MB",
+      "Architecture": "Core i3"
+    }
+  },
+  {
+    "id": 5,
+    "slug": "processor",
+    "image": "/processor/proc5.png",
+    "name": "AMD Ryzen 5 5800X Processor",
+    "price": 38500,
+    "discount": 7,
+    "rating": 3.8,
+    "reviewsCount": 1004,
+    "stock": 8,
+    "brand": "Intel",
+    "specifications": {
+      "Cores/Threads": "8/16",
+      "Base Clock": "3.8GHz",
+      "Max Boost Clock": "4.7GHz",
+      "Socket": "Intel",
+      "TDP": "105W",
+      "Cache": "36MB",
+      "Architecture": "Zen 5"
+    }
+  },
+  {
+    "id": 6,
+    "slug": "processor",
+    "image": "/processor/proc6.jpg",
+    "name": "AMD Ryzen 5 5600X Processor",
+    "price": 31650,
+    "discount": 6,
+    "rating": 4.5,
+    "reviewsCount": 1523,
+    "stock": 12,
+    "specifications": {
+      "Cores/Threads": "8/16",
+      "Base Clock": "3.8GHz",
+      "Max Boost Clock": "4.7GHz",
+      "Socket": "AM4",
+      "TDP": "105W",
+      "Cache": "36MB",
+      "Architecture": "Zen 5"
+    }
+  },
+  {
+    "id": 7,
+    "slug": "processor",
+    "image": "/processor/proc7.jpg",
+    "name": "AMD Ryzen 7 5800X Processor",
+    "price": 41650,
+    "discount": 0,
+    "rating": 4.5,
+    "reviewsCount": 1523,
+    "stock": 12,
+    "specifications": {
+      "Cores/Threads": "8/16",
+      "Base Clock": "3.8GHz",
+      "Max Boost Clock": "4.7GHz",
+      "Socket": "AM4",
+      "TDP": "105W",
+      "Cache": "36MB",
+      "Architecture": "Zen 5"
+    }
+  },
+  {
+    "id": 8,
+    "slug": "processor",
+    "image": "/processor/proc8.png",
+    "name": "AMD Ryzen 7 5800X Processor",
+    "price": 46650,
+    "discount": 9,
+    "rating": 4.5,
+    "reviewsCount": 1523,
+    "stock": 12,
+    "specifications": {
+      "Cores/Threads": "8/16",
+      "Base Clock": "3.8GHz",
+      "Max Boost Clock": "4.7GHz",
+      "Socket": "AM4",
+      "TDP": "105W",
+      "Cache": "36MB",
+      "Architecture": "Zen 6"
+    }
+  },
+  {
+    "id": 9,
+    "slug": "processor",
+    "image": "/processor/proc9.jpg",
+    "name": "Inter Core i5 4th Gen Processor",
+    "price": 7860,
+    "discount": 5,
+    "rating": 4.1,
+    "reviewsCount": 564,
+    "stock": 13,
+    "brand": "Intel",
+    "specifications": {
+      "Cores/Threads": "8/16",
+      "Base Clock": "3.8GHz",
+      "Max Boost Clock": "4.7GHz",
+      "Socket": "Intel",
+      "TDP": "105W",
+      "Cache": "36MB",
+      "Architecture": "Core i5"
+    }
+  },
+  {
+    "id": 10,
+    "slug": "processor",
+    "image": "/processor/proc10.jpg",
+    "name": "AMD Ryzen 7 5800X Processor",
+    "price": 41650,
+    "discount": 4,
+    "rating": 4.5,
+    "reviewsCount": 1523,
+    "stock": 12,
+    "specifications": {
+      "Cores/Threads": "8/16",
+      "Base Clock": "3.8GHz",
+      "Max Boost Clock": "4.7GHz",
+      "Socket": "AM4",
+      "TDP": "105W",
+      "Cache": "36MB",
+      "Architecture": "Zen 5"
+    }
+  },
+  {
+    "id": 11,
+    "slug": "processor",
+    "image": "/processor/proc11.jpeg",
+    "name": "AMD Ryzen 7 5800X Processor",
+    "price": 41650,
+    "discount": 4,
+    "rating": 4.5,
+    "reviewsCount": 1523,
+    "stock": 12,
+    "specifications": {
+      "Cores/Threads": "8/16",
+      "Base Clock": "3.8GHz",
+      "Max Boost Clock": "4.7GHz",
+      "Socket": "AM4",
+      "TDP": "105W",
+      "Cache": "36MB",
+      "Architecture": "Zen 5"
+    }
+  },
+  {
+    "id": 12,
+    "slug": "processor",
+    "image": "/processor/proc12.jpg",
+    "name": "AMD Ryzen 7 5800X Processor",
+    "price": 41650,
+    "discount": 4,
+    "rating": 4.5,
+    "reviewsCount": 1523,
+    "stock": 12,
+    "specifications": {
+      "Cores/Threads": "8/16",
+      "Base Clock": "3.8GHz",
+      "Max Boost Clock": "4.7GHz",
+      "Socket": "AM4",
+      "TDP": "105W",
+      "Cache": "36MB",
+      "Architecture": "Zen 5"
+    }
+  },
+  {
+    "id": 13,
+    "slug": "processor",
+    "image": "/processor/proc13.jpg",
+    "name": "Inter Core i5 4th Gen Processor",
+    "price": 7860,
+    "discount": 0,
+    "rating": 4.1,
+    "reviewsCount": 564,
+    "stock": 13,
+    "brand": "Intel",
+    "specifications": {
+      "Cores/Threads": "8/16",
+      "Base Clock": "3.8GHz",
+      "Max Boost Clock": "4.7GHz",
+      "Socket": "Intel",
+      "TDP": "105W",
+      "Cache": "36MB",
+      "Architecture": "Core i5"
+    }
+  }
+]
