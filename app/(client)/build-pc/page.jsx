@@ -1,7 +1,8 @@
 "use client";
 
-import { useState } from "react";
+import { useState, useEffect, useRef } from "react";
 import Image from "next/image";
+import Link from "next/link";
 import { AddToCartButton } from "@/components/elements/shared/addToCartButton";
 import { truncateText } from "@/components/utils";
 import {
@@ -235,6 +236,56 @@ const formatPrice = (value) =>
 export default function BuildPC() {
   const [openPopBuild, setOpenPopBuild] = useState(null);
   const [selectedComponents, setSelectedComponents] = useState({});
+  const buildPopupRef = useRef(null);
+
+  useEffect(() => {
+    if (!openPopBuild) return;
+
+    const previousActiveElement = document.activeElement;
+
+    // Focus the first select button when popup opens
+    const focusableSelector = 'button, [href], input, select, textarea, [tabindex]:not([tabindex="-1"])';
+    const timer = setTimeout(() => {
+      const focusableElements = buildPopupRef.current?.querySelectorAll(focusableSelector);
+      if (focusableElements && focusableElements.length > 0) {
+        focusableElements[0].focus();
+      }
+    }, 50);
+
+    const handleKeyDown = (e) => {
+      if (e.key === "Escape") {
+        setOpenPopBuild(null);
+        return;
+      }
+
+      if (e.key === "Tab") {
+        const focusableElements = buildPopupRef.current?.querySelectorAll(focusableSelector);
+        if (!focusableElements || focusableElements.length === 0) return;
+
+        const firstElement = focusableElements[0];
+        const lastElement = focusableElements[focusableElements.length - 1];
+
+        if (e.shiftKey) {
+          if (document.activeElement === firstElement) {
+            lastElement.focus();
+            e.preventDefault();
+          }
+        } else {
+          if (document.activeElement === lastElement) {
+            firstElement.focus();
+            e.preventDefault();
+          }
+        }
+      }
+    };
+
+    window.addEventListener("keydown", handleKeyDown);
+    return () => {
+      clearTimeout(timer);
+      window.removeEventListener("keydown", handleKeyDown);
+      previousActiveElement?.focus();
+    };
+  }, [openPopBuild]);
 
   const handleSelectItem = (item) => {
     setSelectedComponents((prev) => ({
@@ -309,15 +360,17 @@ export default function BuildPC() {
           style={{ objectFit: "contain" }}
         />
       </div>
-      <div className="app_bradecumb">
+      <nav className="app_bradecumb" aria-label="Breadcrumb">
         <ul>
           <li>
-            <Home className="app_brd_home" />
-            <Larrow className="app_brd_arrow" />
+            <Link href="/" aria-label="Home">
+              <Home className="app_brd_home" />
+            </Link>
+            <Larrow className="app_brd_arrow" aria-hidden="true" focusable="false" />
           </li>
           <li>Build Your PC</li>
         </ul>
-      </div>
+      </nav>
       <div className="app_build_main_content_list">
         <div className="app_build_mian_area">
           <div className="app_category_build_item">
@@ -334,12 +387,14 @@ export default function BuildPC() {
                         <h6>{label}</h6>
                       </div>
                       {!selectedItem && (
-                        <div
+                        <button
+                          type="button"
                           className="app_open_pop"
                           onClick={() => setOpenPopBuild(label)}
+                          aria-label={`Select ${label}`}
                         >
-                          <Plus />
-                        </div>
+                          <Plus aria-hidden="true" focusable="false" />
+                        </button>
                       )}
                     </div>
                     {selectedItem && (
@@ -348,7 +403,7 @@ export default function BuildPC() {
                           <figure>
                             <Image
                               src={selectedItem.image}
-                              alt={selectedItem.name}
+                              alt={`Photo of ${selectedItem.name}`}
                               fill
                               sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 33vw"
                               style={{ objectFit: "contain" }}
@@ -370,16 +425,20 @@ export default function BuildPC() {
                             </div>
                             <div className="app_action_btns">
                               <button
+                                type="button"
                                 className="edit_btn"
                                 onClick={() => handleEdit(label)}
+                                aria-label={`Edit ${label}`}
                               >
-                                <Edit />
+                                <Edit aria-hidden="true" focusable="false" />
                               </button>
                               <button
+                                type="button"
                                 className="delete_btn"
                                 onClick={() => handleDelete(label)}
+                                aria-label={`Delete ${label}`}
                               >
-                                <Delete />
+                                <Delete aria-hidden="true" focusable="false" />
                               </button>
                             </div>
                           </div>
@@ -454,13 +513,46 @@ export default function BuildPC() {
         </div>
       </div>
       {openPopBuild && (
-        <div className="app_build_pc_popup">
+        <div
+          className="app_build_pc_popup"
+          role="dialog"
+          aria-modal="true"
+          aria-labelledby="build-pop-title"
+          ref={buildPopupRef}
+        >
           <span
             className="app_span_overlay"
             onClick={() => setOpenPopBuild(null)}
+            tabIndex={-1}
+            aria-hidden="true"
           ></span>
           <div className="app_pop_build_inside">
-            <h5>{openPopBuild} Items</h5>
+            <div
+              style={{
+                display: "flex",
+                justifyContent: "space-between",
+                alignItems: "center",
+                marginBottom: "20px",
+              }}
+            >
+              <h5 id="build-pop-title" style={{ margin: 0 }}>
+                {openPopBuild} Items
+              </h5>
+              <button
+                type="button"
+                onClick={() => setOpenPopBuild(null)}
+                aria-label={`Close ${openPopBuild} Dialog`}
+                style={{
+                  background: "transparent",
+                  border: "none",
+                  fontSize: "24px",
+                  cursor: "pointer",
+                  padding: "0 10px",
+                }}
+              >
+                &times;
+              </button>
+            </div>
             <div className="app_list_items_pop">
               {componentDataMap[openPopBuild]?.length ? (
                 <ul>
@@ -470,7 +562,7 @@ export default function BuildPC() {
                         <figure>
                           <Image
                             src={item.image}
-                            alt={item.name}
+                            alt={`Photo of ${item.name}`}
                             fill
                             sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 33vw"
                             style={{ objectFit: "contain" }}
@@ -491,13 +583,19 @@ export default function BuildPC() {
                               <span>Status:</span>
                               <p>In Stock</p>
                             </div>
-                            <div
+                            <button
+                              type="button"
                               className={`products_select_btn ${
                                 selectedComponents[openPopBuild]?.id === item.id
                                   ? "selected"
                                   : ""
                               }`}
                               onClick={() => handleSelectItem(item)}
+                              aria-label={
+                                selectedComponents[openPopBuild]?.id === item.id
+                                  ? `Selected ${item.name}`
+                                  : `Select ${item.name}`
+                              }
                             >
                               <span>
                                 {selectedComponents[openPopBuild]?.id ===
@@ -505,7 +603,7 @@ export default function BuildPC() {
                                   ? "Selected"
                                   : "Select"}
                               </span>
-                            </div>
+                            </button>
                           </div>
                         </div>
                       </article>

@@ -9,7 +9,7 @@ export const Checkbox = ({ title }) => {
     <li>
       <label>
         <input type="checkbox" onChange={() => handleChange(title)} />
-        <p>{title}</p>
+        <span>{title}</span>
       </label>
     </li>
   );
