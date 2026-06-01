@@ -19,14 +19,12 @@ export const ProductCard = ({
       href={`${slug}/${id}`}
       passHref
       className="app_item_product_card"
-      role="group"
-      aria-label={`${name}, ${discount}% off`}
     >
       <article>
         <figure>
           <Image
             src={image}
-            alt={name}
+            alt={`Photo of ${name}`}
             fill
             sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 33vw"
             style={{ objectFit: "contain" }}
@@ -35,18 +33,29 @@ export const ProductCard = ({
         <div className="product_card_details">
           <h3>{truncateText(name, 40)}</h3>
           {discount !== 0 && (
-            <span className="app_discount_price">{discount}% OFF</span>
+            <span className="app_discount_price">
+              <span className="sr-only">Discount: </span>
+              {discount}% OFF
+            </span>
           )}
           <div className="ratingComments">
-            <p className="rating_app">
+            <div className="rating_app">
               <Image
                 src={star}
-                alt={name}
+                alt=""
+                aria-hidden="true"
                 fill
                 style={{ objectFit: "contain" }}
               />
-              {rating}</p>
-            <p className="user_comm">({reviewsCount})</p>
+              <span className="sr-only">Rated </span>
+              {rating}
+              <span className="sr-only"> out of 5 stars</span>
+            </div>
+            <p className="user_comm">
+              <span className="sr-only">based on </span>
+              ({reviewsCount})
+              <span className="sr-only"> reviews</span>
+            </p>
           </div>
           <div className="app_price_and_btn">
             <Price price={price} discount={discount} />

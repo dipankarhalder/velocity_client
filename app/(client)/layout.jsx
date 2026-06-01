@@ -11,16 +11,14 @@ export default function MainLayout({ children }) {
       </a>
       <TopHeader />
       <MainHeader />
-      <nav className="app_navigation" aria-label="Main navigation">
+      <div className="app_navigation">
         <div className="app_container">
           <Navigation />
         </div>
-      </nav>
+      </div>
       <main
         id="main-content"
-        role="main"
         className="app_main_cover"
-        aria-label="Main content"
       >
         <div className="app_container">{children}</div>
       </main>

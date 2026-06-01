@@ -51,14 +51,22 @@ export default function ProductDetails() {
       <div className="product_info_container">
         <h1>{product.name}</h1>
         <div className="rating">
-          ⭐ {product.rating} / 5 ({product.reviewsCount} reviews)
+          <span role="img" aria-label="Rating: ">⭐</span> 
+          {product.rating}
+          <span className="sr-only"> out of 5 stars</span> 
+          <span> ({product.reviewsCount} reviews)</span>
         </div>
         <div className="price_block">
-          <p className="price">Rs. {discountedPrice.toFixed(2)}</p>
+          <p className="price">
+            <span className="sr-only">Selling Price: </span>
+            Rs. {discountedPrice.toFixed(2)}
+          </p>
           {product.discount > 0 && (
             <p className="original_price">
-              MRP: <s>Rs. {product.price.toFixed(2)}</s> ({product.discount}%
-              OFF)
+              <span className="sr-only">Original Price: </span>
+              <s>Rs. {product.price.toFixed(2)}</s> 
+              <span className="sr-only">, with a discount of </span>
+              ({product.discount}% OFF)
             </p>
           )}
         </div>
@@ -69,7 +77,7 @@ export default function ProductDetails() {
             : "Out of Stock"}
         </p>
         {product.stock > 0 && (
-          <button className="cart_button">Add to Cart</button>
+          <button type="button" className="cart_button">Add to Cart</button>
         )}
         <div className="description">
           <h3>Product Description</h3>
