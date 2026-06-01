@@ -107,10 +107,16 @@ export const Navigation = () => {
         </div>
         <ul className="app_nav_links">
           <li>
-            <div className="app_nav_gaming">
+            <button
+              type="button"
+              className="app_nav_gaming"
+              aria-haspopup="true"
+              aria-expanded="false"
+              aria-label="Gaming menu"
+            >
               <span>Gaming</span>
-              <Darrow />
-            </div>
+              <Darrow aria-hidden="true" focusable="false" />
+            </button>
             <div className="app_dropdown_menu">
               <ul>
                 {categoryGaming.map((item) => (
@@ -131,25 +137,31 @@ export const Navigation = () => {
             </div>
           </li>
           <li>
-            <div className="app_nav_gaming">
+            <Link href="/laptop" className="app_nav_gaming">
               <span>Laptops</span>
-            </div>
+            </Link>
           </li>
           <li>
-            <div className="app_nav_gaming">
+            <Link href="/mobile" className="app_nav_gaming">
               <span>Mobiles</span>
-            </div>
+            </Link>
           </li>
           <li>
-            <div className="app_nav_gaming">
+            <Link href="/brands" className="app_nav_gaming">
               <span>Brands</span>
-            </div>
+            </Link>
           </li>
           <li>
-            <div className="app_nav_gaming">
+            <button
+              type="button"
+              className="app_nav_gaming"
+              aria-haspopup="true"
+              aria-expanded="false"
+              aria-label="Accessories menu"
+            >
               <span>Accessories</span>
-              <Darrow />
-            </div>
+              <Darrow aria-hidden="true" focusable="false" />
+            </button>
           </li>
         </ul>
       </div>

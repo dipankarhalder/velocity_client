@@ -22,16 +22,20 @@ export const MainSlider = () => {
   return (
     <div className="app_main_slider_banner">
       <button
+        type="button"
         onClick={() => swiperRef.current?.slidePrev()}
         className="app_main_prev"
+        aria-label="Previous slide"
       >
-        <Rarrow />
+        <Rarrow aria-hidden="true" focusable="false" />
       </button>
       <button
+        type="button"
         onClick={() => swiperRef.current?.slideNext()}
         className="app_main_next"
+        aria-label="Next slide"
       >
-        <Larrow />
+        <Larrow aria-hidden="true" focusable="false" />
       </button>
       <Swiper
         modules={[Navigation, A11y, Autoplay, Pagination]}
