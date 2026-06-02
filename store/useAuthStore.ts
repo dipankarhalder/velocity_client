@@ -1,4 +1,5 @@
 import { create } from "zustand";
+import { persist } from "zustand/middleware";
 
 interface User {
   name: string;
@@ -14,11 +15,19 @@ interface AuthState {
   logout: () => void;
 }
 
-export const useAuthStore = create<AuthState>((set) => ({
-  isLoginOpen: false,
-  user: null,
-  openLogin: () => set({ isLoginOpen: true }),
-  closeLogin: () => set({ isLoginOpen: false }),
-  loginSuccess: (user) => set({ user, isLoginOpen: false }),
-  logout: () => set({ user: null }),
-}));
+export const useAuthStore = create<AuthState>()(
+  persist(
+    (set) => ({
+      isLoginOpen: false,
+      user: null,
+      openLogin: () => set({ isLoginOpen: true }),
+      closeLogin: () => set({ isLoginOpen: false }),
+      loginSuccess: (user) => set({ user, isLoginOpen: false }),
+      logout: () => set({ user: null }),
+    }),
+    {
+      name: "velocity-auth-storage",
+      partialize: (state) => ({ user: state.user }),
+    }
+  )
+);

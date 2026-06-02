@@ -1,11 +1,17 @@
 "use client";
 
+import { useState, useEffect } from "react";
 import { useAuthStore } from "@/store/useAuthStore";
 import { Account } from "@/components/icons";
 
 export const LoginButton = () => {
   const openLogin = useAuthStore((state) => state.openLogin);
   const user = useAuthStore((state) => state.user);
+
+  const [isMounted, setIsMounted] = useState(false);
+  useEffect(() => {
+    setIsMounted(true);
+  }, []);
 
   return (
     <button
@@ -15,7 +21,7 @@ export const LoginButton = () => {
     >
       <Account aria-hidden="true" focusable="false" />
       <div className="app_main_header_login_text">
-        <p>{user ? user.name : "Login"}</p>
+        <p>{isMounted && user ? user.name : "Login"}</p>
         <em>Account</em>
       </div>
     </button>

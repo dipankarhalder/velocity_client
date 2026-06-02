@@ -27,13 +27,17 @@ export const SearchForm = () => {
       setResults([]);
       return;
     }
-    const lowerQuery = query.toLowerCase();
-    const filtered = allProducts.filter(
-      (p) =>
-        p.name.toLowerCase().includes(lowerQuery) ||
-        (p.brand && p.brand.toLowerCase().includes(lowerQuery))
-    );
-    setResults(filtered.slice(0, 6));
+    const handler = setTimeout(() => {
+      const lowerQuery = query.toLowerCase();
+      const filtered = allProducts.filter(
+        (p) =>
+          p.name.toLowerCase().includes(lowerQuery) ||
+          (p.brand && p.brand.toLowerCase().includes(lowerQuery))
+      );
+      setResults(filtered.slice(0, 6));
+    }, 150);
+
+    return () => clearTimeout(handler);
   }, [query]);
 
   useEffect(() => {
