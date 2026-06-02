@@ -1,33 +1,34 @@
 "use client";
 
-import { useState } from "react";
+import { useCartStore } from "@/store/useCartStore";
 
 export const AddToCartButton = ({
   productName,
-  itemSelected,
+  price = 0,
+  discount = 0,
+  image = "",
 }) => {
-  const [quantity, setQuantity] = useState(itemSelected || 0);
+  const quantity = useCartStore((state) => state.items[productName]?.quantity || 0);
+  const addItem = useCartStore((state) => state.addItem);
+  const updateQuantity = useCartStore((state) => state.updateQuantity);
 
   const handleAdd = () => {
-    setQuantity(1);
+    addItem(productName, price, discount, image);
   };
 
   const increase = () => {
-    setQuantity((prev) => (prev < 6 ? prev + 1 : prev));
+    updateQuantity(productName, quantity + 1);
   };
 
   const decrease = () => {
-    setQuantity((prev) => {
-      const newQty = prev - 1;
-      return newQty <= 0 ? 0 : newQty;
-    });
+    updateQuantity(productName, quantity - 1);
   };
 
   return (
     <div className="app_btn_add" aria-label={`Cart actions for ${productName}`}>
       {quantity === 0 ? (
         <button onClick={handleAdd} aria-label={`Add ${productName} to cart`}>
-          Add
+          Add to Cart
         </button>
       ) : (
         <div

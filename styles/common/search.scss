@@ -1,0 +1,130 @@
+// ==========================================
+// Search Results Page Styles (100% Flat Theme)
+// ==========================================
+
+.search_results_section {
+  width: 100%;
+  margin: 40px 0;
+  padding: 0;
+
+  .search_results_header {
+    margin-bottom: 30px;
+    padding-bottom: 16px;
+    border-bottom: 1px solid $border;
+
+    h1 {
+      font-size: 24px;
+      font-weight: 800;
+      color: $black;
+      margin: 0;
+
+      span {
+        color: $btn;
+      }
+    }
+
+    .search_results_count {
+      font-size: 14px;
+      font-weight: 700;
+      color: #878787;
+      margin: 6px 0 0 0;
+    }
+  }
+
+  .search_results_grid {
+    display: grid;
+    grid-template-columns: repeat(6, 1fr);
+    gap: 18px;
+
+    @media (max-width: 1200px) {
+      grid-template-columns: repeat(4, 1fr);
+    }
+
+    @media (max-width: 992px) {
+      grid-template-columns: repeat(3, 1fr);
+    }
+
+    @media (max-width: 768px) {
+      grid-template-columns: repeat(2, 1fr);
+      gap: 12px;
+    }
+
+    @media (max-width: 480px) {
+      grid-template-columns: 1fr;
+    }
+
+    // Adjust card overrides to align with flat design
+    .app_item_product_card {
+      box-shadow: none !important;
+      border: 1px solid $border !important;
+      border-radius: 8px;
+      overflow: hidden;
+      background: $white;
+      
+      &:hover {
+        border-color: darken($border, 15%) !important;
+        transform: translateY(-2px);
+        transition: all 0.2s ease-in-out;
+      }
+    }
+  }
+
+  .search_no_results {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    padding: 60px 20px;
+    background: $white;
+    border: 1px solid $border;
+    border-radius: 8px;
+    margin: 40px 0;
+
+    .search_no_results_icon {
+      font-size: 54px;
+      margin-bottom: 20px;
+    }
+
+    h2 {
+      font-size: 22px;
+      font-weight: 800;
+      color: $black;
+      margin: 0 0 10px 0;
+    }
+
+    p {
+      font-size: 14px;
+      color: #878787;
+      margin: 4px 0;
+      font-weight: 600;
+    }
+
+    .search_continue_shopping_btn {
+      margin-top: 28px;
+      padding: 12px 36px;
+      font-size: 15px;
+      font-weight: 800;
+      color: $white;
+      background: $btn;
+      border: none;
+      border-radius: 8px;
+      text-decoration: none;
+      display: inline-block;
+      cursor: pointer;
+      transition: background 0.15s ease-in-out;
+
+      &:hover {
+        background: darken($btn, 5%);
+      }
+    }
+  }
+
+  .search_loading {
+    font-size: 16px;
+    font-weight: 800;
+    text-align: center;
+    padding: 80px 20px;
+    color: #878787;
+  }
+}

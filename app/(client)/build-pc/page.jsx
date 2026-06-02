@@ -33,6 +33,8 @@ import {
 import { Price } from "@/components/elements/shared/price";
 import processInfo from "@/data/processor.json";
 import motherboardInfo from "@/data/motherboard.json";
+import { useBuildPcStore } from "@/store/useBuildPcStore";
+import { useWishlistStore } from "@/store/useWishlistStore";
 
 import insideBanner from "../../../public/banner1.jpg";
 import mb1 from "../../../public/mbs1.jpg";
@@ -235,7 +237,15 @@ const formatPrice = (value) =>
 
 export default function BuildPC() {
   const [openPopBuild, setOpenPopBuild] = useState(null);
-  const [selectedComponents, setSelectedComponents] = useState({});
+  
+  const selectedComponents = useBuildPcStore((state) => state.selectedComponents);
+  const selectComponent = useBuildPcStore((state) => state.selectComponent);
+  const removeComponent = useBuildPcStore((state) => state.removeComponent);
+  const totalPrice = useBuildPcStore((state) => state.getTotalPrice());
+
+  const toggleWishlist = useWishlistStore((state) => state.toggleWishlist);
+  const isWishlisted = useWishlistStore((state) => state.isWishlisted);
+
   const buildPopupRef = useRef(null);
 
   useEffect(() => {
@@ -288,10 +298,7 @@ export default function BuildPC() {
   }, [openPopBuild]);
 
   const handleSelectItem = (item) => {
-    setSelectedComponents((prev) => ({
-      ...prev,
-      [openPopBuild]: item,
-    }));
+    selectComponent(openPopBuild, item);
     setOpenPopBuild(null);
   };
 
@@ -300,21 +307,11 @@ export default function BuildPC() {
   };
 
   const handleDelete = (label) => {
-    setSelectedComponents((prev) => {
-      const updated = { ...prev };
-      delete updated[label];
-      return updated;
-    });
+    removeComponent(label);
     if (openPopBuild === label) {
       setOpenPopBuild(null);
     }
   };
-
-  const totalPrice = Object.values(selectedComponents).reduce((sum, item) => {
-    if (!item?.price) return sum;
-    const discount = item.discount || 0;
-    return sum + Math.round(item.price - (item.price * discount) / 100);
-  }, 0);
 
   const handlePrint = () => {
     window.print();
@@ -420,10 +417,47 @@ export default function BuildPC() {
                               </div>
                               <AddToCartButton
                                 productName={selectedItem.name}
-                                itemSelected={selectedItem.selected ? 1 : 1}
+                                price={selectedItem.price}
+                                discount={selectedItem.discount}
+                                image={selectedItem.image}
                               />
                             </div>
-                            <div className="app_action_btns">
+                            <div className="app_action_btns" style={{ display: "flex", alignItems: "center", gap: "12px" }}>
+                              <button
+                                type="button"
+                                className="wishlist_toggle_btn"
+                                onClick={() => toggleWishlist({
+                                  id: selectedItem.id,
+                                  name: selectedItem.name,
+                                  price: selectedItem.price,
+                                  discount: selectedItem.discount,
+                                  image: selectedItem.image,
+                                  slug: selectedItem.slug || "processor"
+                                })}
+                                aria-label={isWishlisted(selectedItem.name) ? `Remove ${selectedItem.name} from wishlist` : `Add ${selectedItem.name} to wishlist`}
+                                style={{
+                                  background: "transparent",
+                                  border: "none",
+                                  cursor: "pointer",
+                                  display: "flex",
+                                  alignItems: "center",
+                                  justifyContent: "center",
+                                  padding: "4px"
+                                }}
+                              >
+                                <Heart
+                                  style={{
+                                    width: "20px",
+                                    height: "20px",
+                                    fill: isWishlisted(selectedItem.name) ? "#fb641b" : "none",
+                                    stroke: isWishlisted(selectedItem.name) ? "#fb641b" : "#718096",
+                                    strokeWidth: "2px",
+                                    transition: "all 0.2s"
+                                  }}
+                                  aria-hidden="true"
+                                  focusable="false"
+                                />
+                              </button>
                               <button
                                 type="button"
                                 className="edit_btn"

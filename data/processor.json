@@ -265,5 +265,47 @@
       "Cache": "36MB",
       "Architecture": "Core i5"
     }
+  },
+  {
+    "id": 14,
+    "slug": "processor",
+    "image": "/processor/proc6.jpg",
+    "name": "Intel Core i9-14900K Desktop Processor 24 Cores",
+    "price": 56900,
+    "discount": 10,
+    "rating": 4.9,
+    "reviewsCount": 242,
+    "stock": 15,
+    "brand": "Intel",
+    "specifications": {
+      "Cores/Threads": "24 (8 P-cores + 16 E-cores) / 32",
+      "Base Clock": "3.2GHz",
+      "Max Boost Clock": "6.0GHz",
+      "Socket": "LGA1700",
+      "TDP": "125W",
+      "Cache": "36MB Smart Cache",
+      "Architecture": "Raptor Lake Refresh"
+    }
+  },
+  {
+    "id": 15,
+    "slug": "processor",
+    "image": "/processor/proc7.jpg",
+    "name": "AMD Ryzen 9 7950X3D 16-Core 32-Thread Processor",
+    "price": 62000,
+    "discount": 5,
+    "rating": 4.8,
+    "reviewsCount": 198,
+    "stock": 8,
+    "brand": "AMD",
+    "specifications": {
+      "Cores/Threads": "16/32",
+      "Base Clock": "4.2GHz",
+      "Max Boost Clock": "5.7GHz",
+      "Socket": "AM5",
+      "TDP": "120W",
+      "Cache": "128MB 3D V-Cache",
+      "Architecture": "Zen 4"
+    }
   }
 ]
