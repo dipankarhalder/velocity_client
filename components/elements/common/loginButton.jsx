@@ -1,21 +1,21 @@
 "use client";
 
-import { useDispatch } from "react-redux";
-import { openLogin } from "@/store/slices/authSlice";
+import { useAuthStore } from "@/store/useAuthStore";
 import { Account } from "@/components/icons";
 
 export const LoginButton = () => {
-  const dispatch = useDispatch();
+  const openLogin = useAuthStore((state) => state.openLogin);
+  const user = useAuthStore((state) => state.user);
 
   return (
     <button
       aria-label="Login to your account"
       type="button"
-      onClick={() => dispatch(openLogin())}
+      onClick={openLogin}
     >
       <Account aria-hidden="true" focusable="false" />
       <div className="app_main_header_login_text">
-        <p>Login</p>
+        <p>{user ? user.name : "Login"}</p>
         <em>Account</em>
       </div>
     </button>

@@ -187,5 +187,45 @@
       "Cache": "36MB",
       "Architecture": "Core i3"
     }
+  },
+  {
+    "id": 10,
+    "slug": "motherboard",
+    "image": "/motherboard/mth1.jpg",
+    "name": "ASUS ROG Strix Z790-E Gaming WiFi II DDR5 Motherboard",
+    "price": 54900,
+    "discount": 12,
+    "rating": 4.9,
+    "reviewsCount": 84,
+    "stock": 5,
+    "brand": "Intel",
+    "specifications": {
+      "Chipset": "Intel Z790",
+      "MemorySupport": "DDR5 Dual Channel up to 7800+ (OC)",
+      "FormFactor": "ATX",
+      "WiFi": "WiFi 7 Built-in",
+      "ExpansionSlots": "1 x PCIe 5.0 x16, 2 x PCIe 4.0 x16",
+      "Storage": "5 x M.2 slots (1 x PCIe 5.0)"
+    }
+  },
+  {
+    "id": 11,
+    "slug": "motherboard",
+    "image": "/motherboard/mth2.jpeg",
+    "name": "Gigabyte B650 AORUS Elite AX AM5 ATX Motherboard",
+    "price": 24500,
+    "discount": 8,
+    "rating": 4.7,
+    "reviewsCount": 156,
+    "stock": 10,
+    "brand": "AMD",
+    "specifications": {
+      "Chipset": "AMD B650",
+      "MemorySupport": "DDR5 Dual Channel up to 6600+ (OC)",
+      "FormFactor": "ATX",
+      "WiFi": "WiFi 6E Built-in",
+      "ExpansionSlots": "1 x PCIe 4.0 x16, 2 x PCIe 3.0 x1",
+      "Storage": "3 x M.2 slots (1 x PCIe 5.0 x4)"
+    }
   }
 ]

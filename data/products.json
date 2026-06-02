@@ -248,5 +248,43 @@
       "MaxGPUSize": "400mm",
       "Material": "SPCC Steel + Tempered Glass"
     }
+  },
+  {
+    "id": 14,
+    "slug": "processor",
+    "name": "Razer DeathAdder V3 Pro Wireless Gaming Mouse",
+    "image": "/p3.jpg",
+    "price": 15990,
+    "discount": 15,
+    "rating": 4.8,
+    "reviewsCount": 412,
+    "stock": 20,
+    "description": "The Razer DeathAdder V3 Pro features ultra-lightweight design, top-tier optical sensor, and robust wireless connection.",
+    "specifications": {
+      "Weight": "63g",
+      "Sensor": "Focus Pro 30K Optical",
+      "Connectivity": "Razer HyperSpeed Wireless",
+      "BatteryLife": "Up to 90 Hours",
+      "MaxDPI": "30000"
+    }
+  },
+  {
+    "id": 15,
+    "slug": "processor",
+    "name": "Corsair K100 RGB Mechanical Gaming Keyboard",
+    "image": "/p4.jpg",
+    "price": 22990,
+    "discount": 10,
+    "rating": 4.7,
+    "reviewsCount": 289,
+    "stock": 12,
+    "description": "Corsair K100 RGB is a premium optical-mechanical gaming keyboard with durable aluminum frame and ARGB lighting.",
+    "specifications": {
+      "Switches": "Corsair OPX Optical-Mechanical",
+      "Backlighting": "Per-key RGB",
+      "PollingRate": "8000Hz",
+      "Keycaps": "Double-shot PBT",
+      "MediaKeys": "Dedicated with volume roller"
+    }
   }
 ]

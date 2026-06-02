@@ -1,0 +1,234 @@
+.app_brands_page_container {
+  width: 100%;
+  padding: 30px 0 60px;
+
+  .app_brands_banner {
+    width: 100%;
+    background: linear-gradient(135deg, #111827, #1f2937);
+    color: $white;
+    padding: 60px 40px;
+    border-radius: 16px;
+    margin-bottom: 40px;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.15);
+    text-align: center;
+    position: relative;
+    overflow: hidden;
+
+    &::before {
+      content: '';
+      position: absolute;
+      top: -50%;
+      left: -50%;
+      width: 200%;
+      height: 200%;
+      background: radial-gradient(circle, rgba(220, 24, 31, 0.08) 0%, transparent 60%);
+      pointer-events: none;
+    }
+
+    h1 {
+      font-size: 38px;
+      font-weight: 800;
+      margin-bottom: 12px;
+      letter-spacing: -1px;
+      color: $white;
+    }
+
+    p {
+      font-size: 16px;
+      font-weight: 600;
+      color: #9ca3af;
+      max-width: 600px;
+      margin: 0 auto;
+      line-height: 1.6;
+    }
+  }
+
+  .app_brands_controls {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+    margin-bottom: 40px;
+    width: 100%;
+
+    .app_brands_search_wrapper {
+      width: 100%;
+      max-width: 500px;
+      margin: 0 auto;
+      position: relative;
+
+      input {
+        width: 100%;
+        height: 48px;
+        padding: 0 45px 0 20px;
+        border: 1.5px solid #e2e8f0;
+        border-radius: 12px;
+        font-size: 15px;
+        font-weight: 600;
+        color: #1a202c;
+        transition: all 0.3s cubic-bezier(0.16, 1, 0.3, 1);
+        box-shadow: 0 4px 6px rgba(0, 0, 0, 0.02);
+
+        &:focus {
+          border-color: #dc181f;
+          box-shadow: 0 0 0 4px rgba(220, 24, 31, 0.15);
+          outline: none;
+        }
+
+        &::placeholder {
+          color: #a0aec0;
+        }
+      }
+
+      .app_search_icon_btn {
+        position: absolute;
+        right: 15px;
+        top: 50%;
+        transform: translateY(-50%);
+        color: #a0aec0;
+        pointer-events: none;
+        display: flex;
+        align-items: center;
+
+        svg {
+          width: 18px;
+          height: 18px;
+        }
+      }
+    }
+
+    .app_brands_filter_tabs {
+      display: flex;
+      justify-content: center;
+      gap: 12px;
+      flex-wrap: wrap;
+      width: 100%;
+
+      button {
+        background: #f7fafc;
+        border: 1.5px solid #e2e8f0;
+        border-radius: 10px;
+        padding: 8px 20px;
+        font-size: 14px;
+        font-weight: 700;
+        color: #4a5568;
+        cursor: pointer;
+        transition: all 0.3s ease;
+
+        &:hover {
+          background: #edf2f7;
+          color: #2d3748;
+        }
+
+        &.active {
+          background: #dc181f;
+          border-color: #dc181f;
+          color: $white;
+          box-shadow: 0 4px 12px rgba(220, 24, 31, 0.25);
+        }
+      }
+    }
+  }
+
+  .app_brands_grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(260px, 1fr));
+    gap: 24px;
+    width: 100%;
+
+    .app_brands_card {
+      background: $white;
+      border: 1.5px solid #f0f0f0;
+      border-radius: 16px;
+      overflow: hidden;
+      box-shadow: 0 6px 15px rgba(0, 0, 0, 0.03);
+      transition: all 0.4s cubic-bezier(0.16, 1, 0.3, 1);
+      display: flex;
+      flex-direction: column;
+      height: 100%;
+
+      .app_brand_logo_area {
+        width: 100%;
+        height: 140px;
+        position: relative;
+        background: #fafafa;
+        border-bottom: 1.5px solid #f0f0f0;
+        padding: 20px;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+
+        img {
+          object-fit: contain !important;
+          transition: transform 0.4s ease;
+        }
+      }
+
+      .app_brand_details_area {
+        padding: 20px;
+        display: flex;
+        flex-direction: column;
+        flex-grow: 1;
+
+        h3 {
+          font-size: 18px;
+          font-weight: 800;
+          color: $black;
+          margin-bottom: 8px;
+        }
+
+        p {
+          font-size: 13px;
+          font-weight: 600;
+          color: #718096;
+          line-height: 1.5;
+          margin-bottom: 20px;
+          flex-grow: 1;
+        }
+
+        .app_brand_explore_btn {
+          width: 100%;
+          height: 38px;
+          border-radius: 8px;
+          border: 1.5px solid #dc181f;
+          background: transparent;
+          color: #dc181f;
+          font-size: 13.5px;
+          font-weight: 800;
+          cursor: pointer;
+          display: flex;
+          align-items: center;
+          justify-content: center;
+          transition: all 0.3s ease;
+
+          &:hover {
+            background: #dc181f;
+            color: $white;
+            box-shadow: 0 4px 10px rgba(220, 24, 31, 0.2);
+          }
+        }
+      }
+
+      &:hover {
+        transform: translateY(-5px);
+        box-shadow: 0 15px 30px rgba(0, 0, 0, 0.08);
+        border-color: #dc181f;
+
+        .app_brand_logo_area img {
+          transform: scale(1.06);
+        }
+      }
+    }
+  }
+
+  .app_brands_empty {
+    width: 100%;
+    text-align: center;
+    padding: 60px 20px;
+    font-size: 16px;
+    font-weight: 700;
+    color: #a0aec0;
+    background: #f7fafc;
+    border-radius: 12px;
+    border: 2px dashed #e2e8f0;
+  }
+}
