@@ -1,5 +1,6 @@
 "use client";
 
+import { useState, useEffect } from "react";
 import Link from "next/link";
 import { Logo } from "@/components/elements/common/logo";
 import { SearchForm } from "@/components/elements/common/searchForm";
@@ -14,6 +15,11 @@ export const MainHeader = () => {
   const wishlistCount = useWishlistStore((state) => Object.keys(state.items).length);
   const user = useAuthStore((state) => state.user);
   const logout = useAuthStore((state) => state.logout);
+
+  const [isMounted, setIsMounted] = useState(false);
+  useEffect(() => {
+    setIsMounted(true);
+  }, []);
 
   return (
     <header className="app_main_header" role="banner">
@@ -35,7 +41,7 @@ export const MainHeader = () => {
               <ul role="list">
                 <li className="app_login_btn" style={{ display: "flex", alignItems: "center", gap: "10px" }}>
                   <LoginButton />
-                  {user && (
+                  {isMounted && user && (
                     <button
                       type="button"
                       onClick={logout}
@@ -57,7 +63,7 @@ export const MainHeader = () => {
                 <li style={{ position: "relative" }}>
                   <Link href="/cart" aria-label="View shopping cart">
                     <Shoping aria-hidden="true" focusable="false" />
-                    {cartCount > 0 && (
+                    {isMounted && cartCount > 0 && (
                       <span
                         className="header_badge_count"
                         style={{
@@ -82,7 +88,7 @@ export const MainHeader = () => {
                 <li style={{ position: "relative" }}>
                   <Link href="#" aria-label="View wishlist">
                     <Heart aria-hidden="true" focusable="false" />
-                    {wishlistCount > 0 && (
+                    {isMounted && wishlistCount > 0 && (
                       <span
                         className="header_badge_count"
                         style={{

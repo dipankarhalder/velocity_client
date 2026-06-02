@@ -1,4 +1,5 @@
 import { create } from "zustand";
+import { persist } from "zustand/middleware";
 
 export interface WishlistItem {
   id: number;
@@ -15,16 +16,23 @@ interface WishlistState {
   isWishlisted: (name: string) => boolean;
 }
 
-export const useWishlistStore = create<WishlistState>((set, get) => ({
-  items: {},
-  toggleWishlist: (item) => set((state) => {
-    const updated = { ...state.items };
-    if (updated[item.name]) {
-      delete updated[item.name];
-    } else {
-      updated[item.name] = item;
+export const useWishlistStore = create<WishlistState>()(
+  persist(
+    (set, get) => ({
+      items: {},
+      toggleWishlist: (item) => set((state) => {
+        const updated = { ...state.items };
+        if (updated[item.name]) {
+          delete updated[item.name];
+        } else {
+          updated[item.name] = item;
+        }
+        return { items: updated };
+      }),
+      isWishlisted: (name) => !!get().items[name],
+    }),
+    {
+      name: "velocity-wishlist-storage",
     }
-    return { items: updated };
-  }),
-  isWishlisted: (name) => !!get().items[name],
-}));
+  )
+);

@@ -1,7 +1,6 @@
 import { TopHeader } from "@/components/elements/common/topHeader";
 import { MainHeader } from "@/components/elements/common/mainHeader";
 import { Navigation } from "@/components/elements/common/navigation";
-import { LoginPopup } from "@/components/elements/common/loginPopup";
 import { Footer } from "@/components/elements/common/footer";
 
 export default function MainLayout({ children }) {
@@ -24,7 +23,6 @@ export default function MainLayout({ children }) {
         <div className="app_container">{children}</div>
       </main>
       <Footer />
-      <LoginPopup />
     </section>
   );
 }
