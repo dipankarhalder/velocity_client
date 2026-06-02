@@ -50,6 +50,7 @@ export default function CheckoutPage() {
 
   const handleConfirmOrder = (e) => {
     e.preventDefault();
+    if (isProcessing) return;
     if (!address.fullName.trim() || !address.phone.trim() || !address.addressLine.trim() || !address.city.trim()) {
       alert("Please fill in all required delivery details!");
       return;

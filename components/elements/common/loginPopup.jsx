@@ -12,21 +12,21 @@ export const LoginPopup = () => {
   const closeLogin = useAuthStore((state) => state.closeLogin);
   const loginSuccess = useAuthStore((state) => state.loginSuccess);
 
-  const { register, handleSubmit, reset } = useForm();
+  const { register, handleSubmit, reset, formState: { isSubmitting } } = useForm();
   const modalRef = useRef(null);
   const [isSignUp, setIsSignUp] = useState(false);
+  const [showPassword, setShowPassword] = useState(false);
+  const [showConfirmPassword, setShowConfirmPassword] = useState(false);
 
   useEffect(() => {
     if (!isOpen) return;
-
-    // Reset signup state when popup opens
-    setIsSignUp(false);
-    reset();
 
     const previousActiveElement = document.activeElement;
     const focusableSelector = 'button, [href], input, select, textarea, [tabindex]:not([tabindex="-1"])';
     
     const timer = setTimeout(() => {
+      setIsSignUp(false);
+      reset();
       const focusableElements = modalRef.current?.querySelectorAll(focusableSelector);
       if (focusableElements && focusableElements.length > 0) {
         focusableElements[0].focus();
@@ -70,7 +70,8 @@ export const LoginPopup = () => {
 
   if (!isOpen) return null;
 
-  const onSubmit = (data) => {
+  const onSubmit = async (data) => {
+    await new Promise((resolve) => setTimeout(resolve, 800));
     if (isSignUp) {
       if (data.password !== data.confirmPassword) {
         alert("Passwords do not match!");
@@ -150,24 +151,64 @@ export const LoginPopup = () => {
               </div>
               <div className="app_field_item">
                 <label htmlFor="login-password">Password</label>
-                <input
-                  id="login-password"
-                  type="password"
-                  placeholder="••••••••"
-                  required
-                  {...register("password")}
-                />
+                <div style={{ position: "relative", width: "100%", display: "flex", alignItems: "center" }}>
+                  <input
+                    id="login-password"
+                    type={showPassword ? "text" : "password"}
+                    placeholder="••••••••"
+                    required
+                    {...register("password")}
+                    style={{ width: "100%", paddingRight: "40px" }}
+                  />
+                  <button
+                    type="button"
+                    onClick={() => setShowPassword((prev) => !prev)}
+                    style={{
+                      position: "absolute",
+                      right: "12px",
+                      background: "transparent",
+                      border: "none",
+                      cursor: "pointer",
+                      fontSize: "14px",
+                      padding: "4px",
+                      color: "#718096"
+                    }}
+                    aria-label={showPassword ? "Hide password" : "Show password"}
+                  >
+                    {showPassword ? "👁️" : "👁️‍🗨️"}
+                  </button>
+                </div>
               </div>
               {isSignUp && (
                 <div className="app_field_item">
                   <label htmlFor="login-confirm-password">Confirm Password</label>
-                  <input
-                    id="login-confirm-password"
-                    type="password"
-                    placeholder="••••••••"
-                    required
-                    {...register("confirmPassword")}
-                  />
+                  <div style={{ position: "relative", width: "100%", display: "flex", alignItems: "center" }}>
+                    <input
+                      id="login-confirm-password"
+                      type={showConfirmPassword ? "text" : "password"}
+                      placeholder="••••••••"
+                      required
+                      {...register("confirmPassword")}
+                      style={{ width: "100%", paddingRight: "40px" }}
+                    />
+                    <button
+                      type="button"
+                      onClick={() => setShowConfirmPassword((prev) => !prev)}
+                      style={{
+                        position: "absolute",
+                        right: "12px",
+                        background: "transparent",
+                        border: "none",
+                        cursor: "pointer",
+                        fontSize: "14px",
+                        padding: "4px",
+                        color: "#718096"
+                      }}
+                      aria-label={showConfirmPassword ? "Hide password" : "Show password"}
+                    >
+                      {showConfirmPassword ? "👁️" : "👁️‍🗨️"}
+                    </button>
+                  </div>
                 </div>
               )}
 
@@ -184,8 +225,8 @@ export const LoginPopup = () => {
               )}
 
               <div className="app_login_btn">
-                <button type="submit">
-                  {isSignUp ? "Sign Up" : "Sign In"}
+                <button type="submit" disabled={isSubmitting}>
+                  {isSubmitting ? "Processing..." : isSignUp ? "Sign Up" : "Sign In"}
                 </button>
               </div>
             </form>
